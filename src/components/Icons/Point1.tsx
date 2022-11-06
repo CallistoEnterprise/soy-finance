@@ -1,5 +1,5 @@
 import React from "react";
-import { Svg } from "@soy-libs/uikit";
+import { Svg } from "@callisto-enterprise/soy-uikit2";
 import { SvgProps } from "./types";
 
 const Icon: React.FC<SvgProps> = () => {

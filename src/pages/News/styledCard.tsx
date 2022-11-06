@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Card, Text } from '@soy-libs/uikit'
+import { Card, Text } from '@callisto-enterprise/soy-uikit2'
 import { Theme } from 'constants/theme'
 
 const StyledCard = styled(Card)`
