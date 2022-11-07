@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import Web3 from 'web3-eth'
+import Utils from 'web3-utils'
 
 const METRICS = 'https://soy-finance.deta.dev/soy_metrics'
 
@@ -104,11 +106,37 @@ export const useGetFarmsApr = () => {
   return data
 }
 
-/*
-export const useFarmsFromBlockchain = () => { // logic copied from multichain-soy-finance
-  const chainID = 820
-  const { data: farmsLP, userDataLoaded } = useFarms() // EXPAND
 
-  const activeFarms = farmsLP[chainId].filter((farm) => farm.pid !== 0 && !isArchivedPid(farm.pid))
+
+
+// logic copied from soy-finance-api /////////////////////
+
+// GlobalFarm Contract
+const globalFarmAddress = "0x64Fa36ACD0d13472FD786B03afC9C52aD5FCf023"
+const localFarmsABI  = {"type":"function","stateMutability":"view","outputs":[{"type":"address","name":"farmAddress","internalType":"address"},{"type":"uint256","name":"multiplier","internalType":"uint256"},{"type":"uint256","name":"lastPayment","internalType":"uint256"}],"name":"localFarms","inputs":[{"type":"uint256","name":"","internalType":"uint256"}]}
+const totalMultiplierABI = {"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"totalMultipliers","inputs":[]}
+
+// SOY-LP Contract
+const getReservesABI = {"type":"function","stateMutability":"view","payable":false,"outputs":[{"type":"uint112","name":"_reserve0","internalType":"uint112"},{"type":"uint112","name":"_reserve1","internalType":"uint112"},{"type":"uint32","name":"_blockTimestampLast","internalType":"uint32"}],"name":"getReserves","inputs":[],"constant":true}
+
+// SoyStaking Contract
+const totalStakingAmountABI = {"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"TotalStakingAmount","inputs":[]}
+
+
+
+export const useStakingAPR = async () => {  // @ts-ignore
+  const web3 = new Web3(process.env.REACT_APP_NODE_1);
+  const globalFarmContract = new web3.Contract([localFarmsABI, totalMultiplierABI], globalFarmAddress)
+  
+  const yearlySoyReward = 136986*365
+  const farmsTotalMultipler = parseInt(await globalFarmContract.methods.totalMultipliers().call())
+  const poolInfo = await globalFarmContract.methods.localFarms(33).call()
+  const weight = poolInfo.multiplier/farmsTotalMultipler
+  const poolReward = weight*yearlySoyReward
+  const stakingContract = new web3.Contract([totalStakingAmountABI], '0xeB4511C90F9387De8F8945ABD8C803d5cB275509')
+  const totalStakingAmount = await stakingContract.methods.TotalStakingAmount().call()
+  const liquidity = Number(Utils.fromWei(totalStakingAmount,"ether")) // api has error here
+  const stakingAPR = poolReward/liquidity*100
+
+  return {'apr': stakingAPR}
 }
-*/
