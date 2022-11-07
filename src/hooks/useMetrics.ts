@@ -39,12 +39,9 @@ export const useMetrics = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      let errorEncountered = false // api errored?
-      let counter = 0 // times loop finished
-      let response: AxiosResponse<any>
-
-      while(!errorEncountered || response === undefined) {
-        errorEncountered = false;
+      for(let i = 0; i < CONFIG_API_TRIES; i++) {
+        let response: AxiosResponse<any>
+        let errorEncountered = false;
 
         try { // eslint-disable-next-line
           response = await axios.get(METRICS_API_ENDPOINT)
@@ -53,22 +50,21 @@ export const useMetrics = () => {
           errorEncountered = true
         }
 
-        counter += 1
-        if(counter === CONFIG_API_TRIES)
-          break;
+        if(!errorEncountered && response !== undefined) {
+          setMetricsData(response.data)
+          break
+        }
       }
-
-      setMetricsData(response.data)
-        /* axios
-          .get(METRICS_API_ENDPOINT)
-          .then((response) => {
-            if (response.data) {
-              setMetricsData(response.data)
-            }
-          })
-          .catch((err) => {
-            console.error(err)
-          }) */
+      /* axios
+        .get(METRICS_API_ENDPOINT)
+        .then((response) => {
+          if (response.data) {
+            setMetricsData(response.data)
+          }
+        })
+        .catch((err) => {
+          console.error(err)
+        }) */
     }
 
     fetchData()
