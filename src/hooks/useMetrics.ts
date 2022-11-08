@@ -65,6 +65,7 @@ export const useGetBurnedSoy = () => {
   return burnedSoy
 }
 
+
 export const useGetStakingAPR = () => {
   const [apr, setAPR] = useState(0)
 

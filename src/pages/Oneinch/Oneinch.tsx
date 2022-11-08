@@ -78,26 +78,16 @@ const OneToken = () => {
                     <Card img={WhatsNewStaking}>
                         <StyledCardTitle>{t("Soy Staking")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("Stake Soy, Earn SOY")}</StyledCardSubTitle>
-                        <CardBlob style={{paddingLeft: "30px", paddingRight: "30px"}}>
-                            <CardBlobAsset src={soyIcon} alt="" />
-                            <StyledCardText style={{fontWeight: 600}}>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
-                        </CardBlob>
+                        {stakingAPR !== 0 &&
+                            <CardBlob style={{paddingLeft: "30px", paddingRight: "30px"}}>
+                                <CardBlobAsset src={soyIcon} alt="" />
+                                <StyledCardText style={{fontWeight: 600}}>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
+                            </CardBlob>
+                        }
                     </Card>
                     <Card img={WhatsNewFarming}>
                         <StyledCardTitle>{t("Yield Farming")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("High APR Farms")}</StyledCardSubTitle>
-                        {/* ["XMS - SOY", "ANTEX - SOY", "BCOIN - SOY"].map((name) => {
-                            return (
-                            <CardBlob>
-                                <CardBlobAsset src={WhatsNewStaking} alt="" />
-                                <StyledCardText style={{fontWeight: 600}}>+</StyledCardText>
-                                <CardBlobAsset src={WhatsNewStaking} alt="" />
-                                <StyledCardText>
-                                    <span style={{fontWeight: 600}}>{name}</span>
-                                    <br />{t("APR")}: {234.93}%</StyledCardText>
-                            </CardBlob>
-                            )
-                        }) */}
                         {bestFarms.map((farm) => {
                             if(farm.name === "undefined")
                                 return null
