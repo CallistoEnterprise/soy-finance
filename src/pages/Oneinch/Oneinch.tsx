@@ -108,7 +108,7 @@ const OneToken = () => {
                                     <StyledCardText style={{fontWeight: 600}}>+</StyledCardText>
                                     <CardBlobAsset src={getIconByAddress(farm.token1)} alt="" />
                                     <StyledCardText>
-                                        <span style={{fontWeight: 600}}>{farm.name}</span>
+                                        <span style={{fontWeight: 600}}>{farm.name.replace("-", " - ")}</span>
                                         <br />{t("APR")}: {farm.apr.toFixed(2)}%</StyledCardText>
                                 </CardBlob>
                             )
@@ -165,7 +165,7 @@ const CardBlob = styled.div`
     width: auto;
     border-radius: 20px;
     background-color: rgba(255,255,255,0.7);
-    padding: 20px;
+    padding: 20px 10px;
     margin: 10px 0px;
     display: flex;
     flex-direction: row;
