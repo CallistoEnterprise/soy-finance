@@ -4,7 +4,7 @@ import Spacer from 'components/Spacer';
 import { Theme } from 'constants/theme';
 import { Assets } from 'constants/images';
 import { useTranslation } from 'contexts/Localization';
-import { useGetBurnedSoy } from 'hooks/useMetrics';
+import { useGetBurnedSoy, useStakingAPR } from 'hooks/useMetrics';
 
 import Line from 'components/Line';
 
@@ -19,6 +19,8 @@ const OneToken = () => {
     const { t } = useTranslation()
 
     const burnedSoy = useGetBurnedSoy()
+
+    const stakingAPR = useStakingAPR()
 
     return (
         <Container>
@@ -61,7 +63,7 @@ const OneToken = () => {
                         <StyledCardSubTitle>{t("Stake Soy, Earn SOY")}</StyledCardSubTitle>
                         <CardBlob>
                             <CardBlobAsset src={WhatsNewStaking} alt="" />
-                            <StyledCardText>{t("APR")}: {234.93}%</StyledCardText>
+                            <StyledCardText>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
                         </CardBlob>
                     </Card>
                     <Card img={WhatsNewFarming}>
