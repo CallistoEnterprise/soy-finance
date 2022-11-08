@@ -78,9 +78,9 @@ const OneToken = () => {
                     <Card img={WhatsNewStaking}>
                         <StyledCardTitle>{t("Soy Staking")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("Stake Soy, Earn SOY")}</StyledCardSubTitle>
-                        <CardBlob>
+                        <CardBlob style={{paddingLeft: "30px", paddingRight: "30px"}}>
                             <CardBlobAsset src={soyIcon} alt="" />
-                            <StyledCardText>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
+                            <StyledCardText style={{fontWeight: 600}}>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
                         </CardBlob>
                     </Card>
                     <Card img={WhatsNewFarming}>
@@ -116,7 +116,7 @@ const OneToken = () => {
                     </Card>
                     <Card img={WhatsNewBurn}>
                         <StyledCardTitle color={Theme.colors.white}>{t("Total Token Burn")}</StyledCardTitle>
-                        <StyledCardSubTitle color={Theme.colors.white} style={{fontWeight: 900}}>{burnedSoy} $SOY</StyledCardSubTitle>
+                        <StyledCardSubTitle color={Theme.colors.white} style={{fontWeight: 900}}>{burnedSoy.toLocaleString("en-US")} $SOY</StyledCardSubTitle>
                     </Card>
                 </CardsContainer>
             </WhatsNewContainer>
@@ -273,8 +273,8 @@ letter-spacing: 5%;
     font-size: 38px;
     line-height: 52px;
 }
-@media screen and (max-width: 768px ) {
-    // font-size: 18px;
+@media screen and (max-width: 500px ) {
+    font-size: 22px;
 }
 `;
 const BkImage = styled.div`
