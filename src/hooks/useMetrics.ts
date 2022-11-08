@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Utils from 'web3-utils'
+import { request, gql } from 'graphql-request'
+import Farmlist from "./farmlist.json"
 
 /* eslint no-await-in-loop: 0 */
 
@@ -145,7 +147,7 @@ export const useStakingAPR = () => {
           aprs.push(stakingAPR)
         }
       } catch(err) {
-        console.log("useStakingAPR error:", err)
+        // console.log("useStakingAPR error:", err)
       }
 
       setMaxApr(Math.max(...aprs))
@@ -154,4 +156,84 @@ export const useStakingAPR = () => {
   }, [])
 
   return maxApr
+}
+
+
+
+interface FarmWithAPR {
+  name: string,
+  lp: string,
+  apr: number,
+  liquidityUSD: number,
+  token0: string,
+  token1: string
+}
+
+const defaultFarm:FarmWithAPR = {
+  name: "undefined",
+  lp: "",
+  apr: 0,
+  liquidityUSD: 0,
+  token0: "",
+  token1: "",
+}
+
+const INFO_CLIENT = "https://03.callisto.network/subgraphs/name/soyswap"
+
+export const useFarmingAPR = () => {
+  const [bestFarms, setBestFarms] = useState([{...defaultFarm}, {...defaultFarm}, {...defaultFarm}])
+
+  useEffect(() => {
+    const fetchFarms = async () => {
+      try {
+        const coingeckoRequest = await axios.get('https://api.coingecko.com/api/v3/coins/soy-finance')
+        const soyPrice = coingeckoRequest.data.market_data.current_price.usd
+
+        const query = gql`
+          query {
+            pairs(first: 1000){
+              id,
+              name,
+              token0 {
+                id
+              },
+              token1 {
+                id
+              },
+              reserveUSD
+            }
+          }        
+          `
+        const data = await request(INFO_CLIENT, query)
+
+        const farmsWithAPRs:FarmWithAPR[] = []
+          // eslint-disable-next-line
+        for(const farm of Farmlist.farmsInfo) {
+          const pair = data.pairs.find((lp) => lp.id.toLowerCase() === farm.lptoken.toLowerCase())
+          const apr = farm.yearlysoyreward * soyPrice / pair.reserveUSD
+
+          farmsWithAPRs.push({
+            name: pair.name,
+            lp: pair.id,
+            apr: apr * 100,
+            liquidityUSD: pair.reserveUSD,
+            token0: pair.token0.id,
+            token1: pair.token1.id
+          })
+        }
+
+        farmsWithAPRs.sort((a, b) => a.apr < b.apr ? 1 : -1)
+
+        // console.log(farmsWithAPRs)
+
+        setBestFarms([farmsWithAPRs[0], farmsWithAPRs[1], farmsWithAPRs[2]])
+
+      } catch(err) {
+        // console.log(err)
+      }
+    }
+    fetchFarms()
+  }, [])
+
+  return bestFarms
 }

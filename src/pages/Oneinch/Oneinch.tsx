@@ -4,7 +4,9 @@ import Spacer from 'components/Spacer';
 import { Theme } from 'constants/theme';
 import { Assets } from 'constants/images';
 import { useTranslation } from 'contexts/Localization';
-import { useGetBurnedSoy, useStakingAPR } from 'hooks/useMetrics';
+import { useGetBurnedSoy, useStakingAPR, useFarmingAPR } from 'hooks/useMetrics';
+import { CALLISTO_CHAIN_ID } from '@callisto-enterprise/chain-constants'
+import { TOKENLIST } from '@callisto-enterprise/assetslist'
 
 import Line from 'components/Line';
 
@@ -21,6 +23,14 @@ const OneToken = () => {
     const burnedSoy = useGetBurnedSoy()
 
     const stakingAPR = useStakingAPR()
+
+    const bestFarms = useFarmingAPR()
+
+    const mainnetTokens = TOKENLIST[CALLISTO_CHAIN_ID.Mainnet]
+    const getIconByAddress = (address:string) => {
+        return mainnetTokens.find((entry) => entry.address.toLowerCase() === address.toLowerCase()).image
+    }
+    const soyIcon = getIconByAddress("0x9FaE2529863bD691B4A7171bDfCf33C7ebB10a65") // todo refactor the hardcoded address
 
     return (
         <Container>
@@ -69,14 +79,14 @@ const OneToken = () => {
                         <StyledCardTitle>{t("Soy Staking")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("Stake Soy, Earn SOY")}</StyledCardSubTitle>
                         <CardBlob>
-                            <CardBlobAsset src={WhatsNewStaking} alt="" />
+                            <CardBlobAsset src={soyIcon} alt="" />
                             <StyledCardText>{t("APR")}: {stakingAPR.toFixed(2)}%</StyledCardText>
                         </CardBlob>
                     </Card>
                     <Card img={WhatsNewFarming}>
                         <StyledCardTitle>{t("Yield Farming")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("High APR Farms")}</StyledCardSubTitle>
-                        {["XMS - SOY", "ANTEX - SOY", "BCOIN - SOY"].map((name) => {
+                        {/* ["XMS - SOY", "ANTEX - SOY", "BCOIN - SOY"].map((name) => {
                             return (
                             <CardBlob>
                                 <CardBlobAsset src={WhatsNewStaking} alt="" />
@@ -86,6 +96,21 @@ const OneToken = () => {
                                     <span style={{fontWeight: 600}}>{name}</span>
                                     <br />{t("APR")}: {234.93}%</StyledCardText>
                             </CardBlob>
+                            )
+                        }) */}
+                        {bestFarms.map((farm) => {
+                            if(farm.name === "undefined")
+                                return null
+                            
+                            return (
+                                <CardBlob key={farm.lp}>
+                                    <CardBlobAsset src={getIconByAddress(farm.token0)} alt="" />
+                                    <StyledCardText style={{fontWeight: 600}}>+</StyledCardText>
+                                    <CardBlobAsset src={getIconByAddress(farm.token1)} alt="" />
+                                    <StyledCardText>
+                                        <span style={{fontWeight: 600}}>{farm.name}</span>
+                                        <br />{t("APR")}: {farm.apr.toFixed(2)}%</StyledCardText>
+                                </CardBlob>
                             )
                         })}
                     </Card>
