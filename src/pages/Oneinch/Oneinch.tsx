@@ -273,8 +273,11 @@ letter-spacing: 5%;
     font-size: 38px;
     line-height: 52px;
 }
-@media screen and (max-width: 500px ) {
-    font-size: 22px;
+@media screen and (max-width: 450px ) {
+    font-size: 28px;
+}
+@media screen and (max-width: 340px ) {
+    font-size: 20px;
 }
 `;
 const BkImage = styled.div`
