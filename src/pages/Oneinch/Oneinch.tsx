@@ -57,7 +57,14 @@ const OneToken = () => {
                 </div>
 
                 <CardsContainer>
-                    <Card img={WhatsNewXT} />
+                    <Card img={WhatsNewXT} style={{padding: "0"}}>
+                        <a href="https://app.soy.finance/swap" rel="noreferrer noopener">
+                            <button type="button" aria-label="Soy Finance" style={{height: "50%", width: "100%", background: "transparent", border: "none"}} />
+                        </a>
+                        <a href="https://www.xt.com/" rel="noreferrer noopener">
+                            <button type="button" aria-label="Soy Finance" style={{height: "50%", width: "100%", background: "transparent", border: "none"}} />
+                        </a>
+                    </Card>
                     <Card img={WhatsNewStaking}>
                         <StyledCardTitle>{t("Soy Staking")}</StyledCardTitle>
                         <StyledCardSubTitle>{t("Stake Soy, Earn SOY")}</StyledCardSubTitle>
@@ -106,6 +113,7 @@ const WhatsNewContainer = styled.div`
 const CardsContainer = styled.div`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
 `
@@ -118,6 +126,7 @@ const Card = styled.div<{img?: string}>`
     background-image: ${({img}) => `url(${img})`};
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center top;
     border-radius: 20px;
 
     @media screen and (max-width: 768px) {
