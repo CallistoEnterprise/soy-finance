@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Utils from 'web3-utils'
 
+/* eslint no-await-in-loop: 0 */
+
 const METRICS = 'https://soy-finance.deta.dev/soy_metrics'
 
 export const useMetrics = () => {
@@ -108,44 +110,52 @@ export const useGetFarmsApr = () => {
 
 
 const SOY_STAKING_ABI = [{"type":"constructor","stateMutability":"nonpayable","inputs":[{"type":"uint256","name":"_lockTime","internalType":"uint256"}]},{"type":"event","name":"OwnershipTransferred","inputs":[{"type":"address","name":"previousOwner","internalType":"address","indexed":true},{"type":"address","name":"newOwner","internalType":"address","indexed":true}],"anonymous":false},{"type":"event","name":"Rescue","inputs":[{"type":"address","name":"_token","internalType":"address","indexed":false},{"type":"uint256","name":"_amount","internalType":"uint256","indexed":false}],"anonymous":false},{"type":"event","name":"SetAffiliatePercentage","inputs":[{"type":"uint256","name":"_affiliatePercent","internalType":"uint256","indexed":false},{"type":"uint256","name":"_noAffiliatePercent","internalType":"uint256","indexed":false}],"anonymous":false},{"type":"event","name":"StartStaking","inputs":[{"type":"address","name":"staker","internalType":"address","indexed":false},{"type":"uint256","name":"amount","internalType":"uint256","indexed":false},{"type":"uint256","name":"time","internalType":"uint256","indexed":false}],"anonymous":false},{"type":"event","name":"WithdrawRequest","inputs":[{"type":"address","name":"staker","internalType":"address","indexed":false},{"type":"uint256","name":"alignedTime","internalType":"uint256","indexed":false},{"type":"uint256","name":"stakedAmount","internalType":"uint256","indexed":false}],"anonymous":false},{"type":"event","name":"WithdrawStake","inputs":[{"type":"address","name":"staker","internalType":"address","indexed":false},{"type":"uint256","name":"amount","internalType":"uint256","indexed":false},{"type":"uint256","name":"reward","internalType":"uint256","indexed":false}],"anonymous":false},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"BONUS_LIMIT","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"address","name":"","internalType":"address"}],"name":"SOY_TOKEN","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"TIME_RESOLUTION","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"accumulatedRewardPerShare","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"affiliatePercent","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"atTime","internalType":"uint256"},{"type":"uint256","name":"balanceReduceOrRewardPerShare","internalType":"uint256"}],"name":"balances","inputs":[{"type":"uint256","name":"","internalType":"uint256"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"address","name":"","internalType":"address"}],"name":"bonusToken","inputs":[]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"buyBonus","inputs":[{"type":"uint256","name":"bonus","internalType":"uint256"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"enableStaking","inputs":[{"type":"bool","name":"enable","internalType":"bool"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"getAllocationX1000","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"amount","internalType":"uint256"}],"name":"getBonusPrice","inputs":[{"type":"uint256","name":"bonus","internalType":"uint256"},{"type":"address","name":"user","internalType":"address"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256[]","name":"","internalType":"uint256[]"}],"name":"getBonusPrices","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"getRewardPerSecond","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"address","name":"","internalType":"address"}],"name":"globalFarm","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"bool","name":"","internalType":"bool"}],"name":"isEnabled","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"lastRewardTimestamp","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"lockTime","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"noAffiliatePercent","inputs":[]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"notifyRewardAmount","inputs":[{"type":"uint256","name":"reward","internalType":"uint256"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"address","name":"","internalType":"address"}],"name":"owner","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"userReward","internalType":"uint256"}],"name":"pendingReward","inputs":[{"type":"address","name":"user","internalType":"address"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"rescueTokens","inputs":[{"type":"address","name":"_token","internalType":"address"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"setAffiliatePercentage","inputs":[{"type":"uint256","name":"_affiliatePercent","internalType":"uint256"},{"type":"uint256","name":"_noAffiliatePercent","internalType":"uint256"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"setBonusPrices","inputs":[{"type":"uint256[]","name":"bonusPrices","internalType":"uint256[]"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"setBonusToken","inputs":[{"type":"address","name":"_bonusToken","internalType":"address"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"amount","internalType":"uint256"},{"type":"uint256","name":"rewardPerSharePaid","internalType":"uint256"},{"type":"uint64","name":"endTime","internalType":"uint64"},{"type":"uint64","name":"index","internalType":"uint64"},{"type":"uint64","name":"bonus","internalType":"uint64"},{"type":"uint32","name":"affiliatePercent","internalType":"uint32"},{"type":"uint32","name":"noAffiliatePercent","internalType":"uint32"},{"type":"address","name":"affiliate","internalType":"address"}],"name":"staker","inputs":[{"type":"address","name":"","internalType":"address"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"startIndex","inputs":[]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"tokenReceived","inputs":[{"type":"address","name":"_from","internalType":"address"},{"type":"uint256","name":"_value","internalType":"uint256"},{"type":"bytes","name":"_data","internalType":"bytes"}]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"totalShares","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"totalStaked","inputs":[]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"transferOwnership","inputs":[{"type":"address","name":"newOwner","internalType":"address"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"update","inputs":[{"type":"uint256","name":"maxRecords","internalType":"uint256"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"withdraw","inputs":[]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"withdraw","inputs":[{"type":"address","name":"user","internalType":"address"}]},{"type":"function","stateMutability":"nonpayable","outputs":[],"name":"withdrawRequest","inputs":[]}]
-const SOY_STAKING_ADDRESS = "0x31bFf88C6124E1622f81b3Ba7ED219e5d78abd98"
+const SOY_STAKING_ADDRESSES = [
+  "0xfF9289C2656CA1d194DeA1895aAf3278B744Fa70", // 7
+  "0x86F7e2ef599690b64f0063b3F978ea6Ae2814f63", // 30
+  "0x7d6C70b6561C31935e6B0dd77731FC63D5aC37F2", // 91
+  "0x19DcB402162b6937a8ACEac87Ed6c05219c9bEf7", // 182
+  "0x31bFf88C6124E1622f81b3Ba7ED219e5d78abd98", // 365
+]
 
 export const useStakingAPR = () => {
-  const [apr, setApr] = useState(0)
+  const [maxApr, setMaxApr] = useState(0)
 
   useEffect(() => {
     const fetchApr = async () => {
-      try { // @ts-ignore
-        const web3 = new Web3(process.env.REACT_APP_NODE_1); // @ts-ignore
-        const stakingContract = new web3.eth.Contract(SOY_STAKING_ABI, SOY_STAKING_ADDRESS)
-        
-        /* const yearlySoyReward = 136986*365
-        const farmsTotalMultipler = parseInt(await globalFarmContract.methods.totalMultipliers().call())
-        const poolInfo = await globalFarmContract.methods.localFarms(33).call()
-        const weight = poolInfo.multiplier/farmsTotalMultipler
-        const poolReward = weight*yearlySoyReward */
-        const totalStaked = await stakingContract.methods.totalStaked().call()
-        const rewardPerSecond = await stakingContract.methods.getRewardPerSecond().call()
-        const multiplier1000 = await stakingContract.methods.getAllocationX1000().call()
-        const lockTime = await stakingContract.methods.lockTime().call() // should be a year, i.e. 365 * 24 * 60 * 60
+      const web3 = new Web3(process.env.REACT_APP_NODE_1);
 
-        const totalStakedNumber = Number(Utils.fromWei(totalStaked, "ether"))
+      const aprs: number[] = []
+      
+      try {
+        for(let i = 0; i < SOY_STAKING_ADDRESSES.length; i++) {  // @ts-ignore
+          const stakingContract = new web3.eth.Contract(SOY_STAKING_ABI, SOY_STAKING_ADDRESSES[i])
 
-        const stakingAPR = Number(Utils.fromWei(rewardPerSecond, "ether"))
-                            * Number(multiplier1000)
-                            * Number(lockTime)
-                            * 100 / 1000
-                            / Number(Utils.fromWei(totalStaked, "ether"))
+          const totalStaked = await stakingContract.methods.totalStaked().call()
+          const rewardPerSecond = await stakingContract.methods.getRewardPerSecond().call()
+          const multiplier1000 = await stakingContract.methods.getAllocationX1000().call()
+          const year = 365 * 24 * 60 * 60 // await stakingContract.methods.lockTime().call()
 
-        setApr(stakingAPR)
+          const stakingAPR = Number(Utils.fromWei(rewardPerSecond, "ether"))
+                              * Number(multiplier1000)
+                              * Number(year)
+                              * 100 / 1000
+                              / Number(Utils.fromWei(totalStaked, "ether"))
+
+          aprs.push(stakingAPR)
+        }
       } catch(err) {
         console.log("useStakingAPR error:", err)
       }
+
+      console.log(aprs)
+
+      setMaxApr(Math.max(...aprs))
     }
     fetchApr()
   }, [])
 
-  return apr
+  return maxApr
 }
 
 /*
