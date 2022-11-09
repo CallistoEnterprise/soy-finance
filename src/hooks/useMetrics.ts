@@ -214,7 +214,7 @@ export const useFarmingAPR = () => {
           const apr = farm.yearlysoyreward * soyPrice / pair.reserveUSD
 
           farmsWithAPRs.push({
-            name: pair.name,
+            name: farm.pair, // pair.name, // sometimes unknown, subgraph issue
             lp: pair.id,
             apr: apr * 100,
             liquidityUSD: pair.reserveUSD,
