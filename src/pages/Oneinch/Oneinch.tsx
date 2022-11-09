@@ -50,7 +50,7 @@ const OneToken = () => {
                 </div>
                 <div className="col-lg-6 col-md-6" data-aos="fade-left" data-aos-delay="300">
                     <StyledVideo autoPlay muted loop id="totems">
-                        <source src="Totems.webm" type="video/mp4"/>
+                        <source src="Totems.webm" type="video/webm"/>
                     </StyledVideo>
                 </div>
             </SpaceRow>
