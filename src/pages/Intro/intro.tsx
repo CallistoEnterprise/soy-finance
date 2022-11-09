@@ -37,10 +37,10 @@ const Intro = () => {
                 {t('SOY Airdrop')}
             </LiButton2>
             <StyledVideo autoPlay muted loop id="main">
-                <source src="Main.webm" type="video/mp4"/>
+                <source src="Main.webm" type="video/webm"/>
             </StyledVideo>
             <StyledVideoMob autoPlay muted loop id="main">
-                <source src="Mainmobile.webm" type="video/mp4"/>
+                <source src="Mainmobile.webm" type="video/webm"/>
             </StyledVideoMob>
             <ScrollDiv onClick={handleScroll}>
                 <SideImageMob src={Assets.scrolling} alt=""/>

@@ -28,11 +28,11 @@ const SoyToken = () => {
                 <Spacer height="50px" />
                 
                 <StyledVideo autoPlay muted loop id="main">
-                    <source src="Soy.webm" type="video/mp4"/>
+                    <source src="Soy.webm" type="video/webm"/>
                 </StyledVideo>
                 
                 <StyledVideoMob autoPlay muted loop id="main">
-                    <source src="Soymob.webm" type="video/mp4"/>
+                    <source src="Soymob.webm" type="video/webm"/>
                 </StyledVideoMob>
             </Wrapper>
         </Container>
