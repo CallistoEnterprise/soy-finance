@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/PageHeader/Safelistheader';
+import PageFooter from 'components/PageFooter';
 import TokenomicContent from './components/TokenomicContent';
-import PageFooter from '../PageFooter';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import AOS from 'aos';
+import PageFooter from 'components/PageFooter';
 import Intro from './Intro';
 import Metrics from './Metrics';
 import Community from './Community';
 import CommunityMob from './Community/communityMob';
-import PageFooter from '../PageFooter';
 import Oneinch from './Oneinch/Oneinch';
 // import News from './News';
 import SoyToken from './SoyToken/soytoken';
