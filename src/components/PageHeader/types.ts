@@ -19,3 +19,7 @@ export interface headerProps {
     links: Array<action>,
     backClr: string,
 }
+
+export interface PageHeaderProps {
+    centerize?: boolean,
+}

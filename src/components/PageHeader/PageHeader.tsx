@@ -7,6 +7,7 @@ import { Assets } from 'constants/images';
 import './PageHeader.scss';
 import { useTranslation } from 'contexts/Localization';
 import { languages } from 'constants/localization/languages';
+import { PageHeaderProps } from './types';
 
 const langTitle = {
     'en-US': 'EN',
@@ -17,7 +18,7 @@ const langTitle = {
     'ko-KR': 'KO',
 }
 
-const Header: React.FC = () => {
+const PageHeader: React.FC<PageHeaderProps> = ({centerize = false }) => {
     const { currentLanguage, setLanguage, t } = useTranslation()
 
     const handleChangeLang = (lg) => {
@@ -25,8 +26,7 @@ const Header: React.FC = () => {
     }
 
     return (
-      
-        <Navbar collapseOnSelect expand="md" className="navbar" variant="dark" sticky="top" >
+        <Navbar collapseOnSelect expand="md" className={`navbar ${centerize?"centerize":""}`} variant="dark" sticky="top" >
             <Navbar.Brand href="/">
                 <Logo>
                     <LogoImg src={Assets.logo} className="App-logo" alt="logo" />
@@ -127,4 +127,4 @@ const LiButton = styled.a`
         max-width: 180px;
     }
 `
-export default Header;
+export default PageHeader;

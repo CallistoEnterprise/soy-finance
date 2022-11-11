@@ -19,7 +19,7 @@ const Intro = () => {
 
     return (
         <Container id="home">
-            <Header />
+            <Header centerize />
             <Spacer height="25%" />
             <TitleSection />
             <Spacer height="10px" />

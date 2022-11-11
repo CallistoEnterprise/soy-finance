@@ -1,12 +1,15 @@
 .navbar {
     background: transparent;
-    padding: 20px 5% 10px 46%;
+    padding: 20px 15%;
     position: absolute;
     width: 100%;
 }
+.navbar.centerize {
+    padding: 20px 5% 10px 46%;
+}
 .header {
     background: transparent;
-    padding: 20px 5% 10px 46%;
+    padding: 20px 15%;
     position: absolute;
     width: 100%;
 }
@@ -41,7 +44,7 @@
         margin-right: 0px !important;
     }
     .navbar {
-        padding: 20px 5% 10px 12%;
+        padding: 20px 5% 10px 12% !important;
     }
     .header {
         padding: 20px 5% 10px 12%;
@@ -49,7 +52,7 @@
 }
 @media all and (max-width: 560px) {
     .navbar {
-        padding: 10px 10px 0 0;
+        padding: 10px 10px 0 0 !important;
     }
     .header {
         padding: 10px 10px 0 0;

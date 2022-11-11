@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
-import Safelistheader from 'components/PageHeader/Safelistheader';
+import PageHeader from 'components/PageHeader';
 import { Assets } from 'constants/images';
 import 'aos/dist/aos.css';
 
@@ -33,7 +33,7 @@ const Roadmap: React.FC = () => {
 
     return (
         <Container>
-            <Safelistheader />
+            <PageHeader />
             <Img src={Assets.roadmap} alt="" />
             <div ref={pageEndRef} />
         </Container>
