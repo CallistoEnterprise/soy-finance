@@ -12,7 +12,7 @@ import history from './routerHistory'
 
 const Home = lazy(() => import('./pages'));
 const Safelist = lazy(() => import('./pages/Safelist')); // done
-const Tokenomic = lazy(() => import('./pages/Tokenomic'));
+const Tokenomic = lazy(() => import('./pages/Tokenomics')); // done
 const Roadmap = lazy(() => import('./pages/Roadmap'));
 const Airdrop = lazy(() => import('./pages/Airdrop'));
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/Header/Safelistheader';
-import TokenomicContent from './TokenomicContent';
-import PageFooter from './PageFooter';
+import TokenomicContent from './components/TokenomicContent';
+import PageFooter from '../PageFooter';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`
@@ -10,7 +10,7 @@ const Container = styled.div`
     position: relative;
     overflow: hidden;
 `
-const Tokenomic: React.FC = () => {
+const Tokenomics: React.FC = () => {
 
     return (
         <Container>
@@ -21,4 +21,4 @@ const Tokenomic: React.FC = () => {
     )
 }
 
-export default Tokenomic;
+export default Tokenomics;
