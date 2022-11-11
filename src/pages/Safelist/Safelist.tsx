@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/Header/Safelistheader';
-import SafelistContent from './SafelistContent';
-import PageFooter from './PageFooter';
+import SafelistContent from './components/SafelistContent';
+import PageFooter from '../PageFooter';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`
