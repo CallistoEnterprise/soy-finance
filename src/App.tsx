@@ -2,10 +2,13 @@ import React, { lazy } from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import { ResetCSS } from '@callisto-enterprise/soy-uikit2'
 import { ToastListener } from 'contexts/ToastsContext';
-import SuspenseWithChunkError from './components/SuspenseWithChunkError';
-import PageLoader from './components/PageLoader'
-import GlobalStyle from './style/Global'
+import SuspenseWithChunkError from 'components/SuspenseWithChunkError';
+import PageLoader from 'components/PageLoader'
+
+
+import GlobalStyle from 'style/Global'
 import history from './routerHistory'
+
 
 const Home = lazy(() => import('./pages'));
 const Safelist = lazy(() => import('./pages/Safelist'));

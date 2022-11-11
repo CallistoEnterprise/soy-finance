@@ -1,7 +1,7 @@
 import React from 'react'
 import { Spinner } from 'react-bootstrap'
 import styled from 'styled-components'
-import Page from './layout/Page'
+import Page from '../layout/Page'
 
 const Wrapper = styled(Page)`
   display: flex;
