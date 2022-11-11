@@ -13,7 +13,7 @@ import contracts from 'constants/contracts';
 import { registerToken } from 'hooks/wallet';
 import { BIG_100, getBalanceAmount, GetAirdropInfo, getChecksumedAddress } from 'hooks/useTokenBalance';
 import { BigNumber } from 'bignumber.js';
-import { ConnectorNames } from '../../constants'
+import { ConnectorNames } from 'constants/index'
 
 const Wrapper = styled.div`
     display: flex;
