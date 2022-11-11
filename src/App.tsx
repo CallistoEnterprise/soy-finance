@@ -13,7 +13,7 @@ import history from './routerHistory'
 const Home = lazy(() => import('./pages'));
 const Safelist = lazy(() => import('./pages/Safelist')); // done
 const Tokenomic = lazy(() => import('./pages/Tokenomics')); // done
-const Roadmap = lazy(() => import('./pages/Roadmap'));
+const Roadmap = lazy(() => import('./pages/Roadmap')); // done
 const Airdrop = lazy(() => import('./pages/Airdrop'));
 
 const App: React.FC = () => {
