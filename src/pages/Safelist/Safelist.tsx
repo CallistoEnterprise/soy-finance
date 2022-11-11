@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/PageHeader/Safelistheader';
 import PageFooter from 'components/PageFooter';
-import SafelistContent from './components/SafelistContent';
+import SafelistContent from './SafelistContent';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`

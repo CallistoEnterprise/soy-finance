@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import Safelistheader from 'components/PageHeader/Safelistheader';
 import PageFooter from 'components/PageFooter';
-import TokenomicContent from './components/TokenomicContent';
+import TokenomicContent from './TokenomicContent';
 import 'aos/dist/aos.css';
 
 const Container = styled.div`
