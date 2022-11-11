@@ -165,9 +165,6 @@ const PageFooter = () => {
                             <StyledLi2 href="https://www.reddit.com/r/Soy_Finance/" target="_blank"><Redit /></StyledLi2>
                             <StyledLi2 href="https://www.facebook.com/Soy.Finance" target="_blank"><Facebook /></StyledLi2>
                             <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank"><Gitbook /></StyledLi2>
-                            {/* <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
-                                <img src={Assets.medium} width="38px" height="38px" alt=""/>
-                            </StyledLi2> */}
                         </Row>
                         <Spacer height="10px" />
                         <Row3>
