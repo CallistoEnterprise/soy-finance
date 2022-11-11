@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Theme } from 'constants/theme';
 import { Assets } from 'constants/images';
-import './header.scss';
+import './PageHeader.scss';
 import { useTranslation } from 'contexts/Localization';
 import { languages } from 'constants/localization/languages';
 

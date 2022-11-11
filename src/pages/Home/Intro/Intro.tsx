@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from 'components/Header';
+import Header from 'components/PageHeader';
 import Spacer from 'components/Spacer';
 import { Theme } from 'constants/theme';
 import styled from 'styled-components';

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import Safelistheader from 'components/Header/Safelistheader';
+import Safelistheader from 'components/PageHeader/Safelistheader';
 import TokenomicContent from './components/TokenomicContent';
 import PageFooter from '../PageFooter';
 import 'aos/dist/aos.css';

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components';
-import Safelistheader from 'components/Header/Safelistheader';
+import Safelistheader from 'components/PageHeader/Safelistheader';
 import { Assets } from 'constants/images';
 import 'aos/dist/aos.css';
 
