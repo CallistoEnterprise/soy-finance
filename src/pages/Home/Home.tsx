@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import AOS from 'aos';
-import Intro from 'pages/Intro';
-import Metrics from 'pages/Metrics';
+import Intro from './Intro';
+import Metrics from './Metrics';
 import Community from './Community';
 import CommunityMob from './Community/communityMob';
 import PageFooter from '../PageFooter';
