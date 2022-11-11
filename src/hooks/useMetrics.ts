@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Utils from 'web3-utils'
 import { request, gql } from 'graphql-request'
-import Farmlist from "./farmlist.json"
+import Farmlist from "constants/farmlist.json"
 
 /* eslint no-await-in-loop: 0 */
 
