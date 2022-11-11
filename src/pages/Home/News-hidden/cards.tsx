@@ -2,7 +2,7 @@ import React from 'react';
 import Spacer from 'components/Spacer';
 import { useTranslation } from 'contexts/Localization';
 import { Assets } from "constants/images";
-import { marketcapIds } from '../../constants';
+import { marketcapIds } from 'constants/index';
 import StyledCard, { Container, StyledText, WhiteCard, StyledImage } from "./styledCard";
 
 const getShortenNumber = (value: number): number => {
