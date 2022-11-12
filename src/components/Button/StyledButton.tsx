@@ -1,14 +1,14 @@
-import { Theme } from "constants/theme";
-import styled, { DefaultTheme } from "styled-components";
-import { space, layout } from "styled-system";
-import { BaseButtonProps } from "./types";
+import { Theme } from 'constants/theme'
+import styled, { DefaultTheme } from 'styled-components'
+import { space, layout } from 'styled-system'
+import { BaseButtonProps } from './types'
 
 interface ThemedButtonProps extends BaseButtonProps {
-  theme: DefaultTheme;
+  theme: DefaultTheme
 }
 
 interface TransientButtonProps extends ThemedButtonProps {
-  $isLoading?: boolean;
+  $isLoading?: boolean
 }
 
 const getDisabledStyles = ({ $isLoading }: TransientButtonProps) => {
@@ -18,7 +18,7 @@ const getDisabledStyles = ({ $isLoading }: TransientButtonProps) => {
       &.button--disabled {
         cursor: not-allowed;
       }
-    `;
+    `
   }
 
   return `
@@ -30,8 +30,8 @@ const getDisabledStyles = ({ $isLoading }: TransientButtonProps) => {
       color: ${Theme.colors.grey};
       cursor: not-allowed;
     }
-  `;
-};
+  `
+}
 
 /**
  * This is to get around an issue where if you use a Link component
@@ -40,8 +40,8 @@ const getDisabledStyles = ({ $isLoading }: TransientButtonProps) => {
  */
 
 const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
-  return $isLoading ? ".5" : "1";
-};
+  return $isLoading ? '.5' : '1'
+}
 
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
@@ -73,6 +73,6 @@ const StyledButton = styled.button<BaseButtonProps>`
   ${getDisabledStyles}
   ${layout}
   ${space}
-`;
+`
 
-export default StyledButton;
+export default StyledButton

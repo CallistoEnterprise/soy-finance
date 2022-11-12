@@ -1,3 +1,3 @@
-import ToolsAndCharts from './Metrics';
+import ToolsAndCharts from './Metrics'
 
-export default ToolsAndCharts;
+export default ToolsAndCharts

@@ -17,14 +17,14 @@ export const StyledImage = styled.img`
   width: 35px;
   margin: 0 20px 0 0;
 `
-export const Container = styled.div<{img?: string}>`
+export const Container = styled.div<{ img?: string }>`
   position: relative;
   min-width: 320px;
   height: 100%;
   min-height: 360px;
   overflow: hidden;
   padding: 20px;
-  background-image: ${({img}) => `url(${img})`};
+  background-image: ${({ img }) => `url(${img})`};
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
@@ -34,15 +34,15 @@ export const StyledText = styled(Text)`
   /* color: ${Theme.colors.black}; */
   font-family: ${Theme.fonts.text};
   white-space: nowrap;
-`;
-export const WhiteCard = styled(Card)<{width?: string}>`
+`
+export const WhiteCard = styled(Card)<{ width?: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, .6);
+  background-color: rgba(255, 255, 255, 0.6);
   padding: 10px 20px;
   border-radius: 20px;
-  width: ${({width}) => width};
+  width: ${({ width }) => width};
   margin-left: auto;
   margin-right: auto;
 `

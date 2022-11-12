@@ -1,25 +1,25 @@
 export default {
-    NORMAL: "",
-    DROPDOWN: "dropdown",
-    RECT: "rect",
+  NORMAL: '',
+  DROPDOWN: 'dropdown',
+  RECT: 'rect',
 }
 
 export interface action {
-    type: string,
-    name: string,
-    link: string,
+  type: string
+  name: string
+  link: string
 }
 export interface brand {
-    name: string,
-    img: string,
-    link: string,
+  name: string
+  img: string
+  link: string
 }
 export interface headerProps {
-    brand: brand,
-    links: Array<action>,
-    backClr: string,
+  brand: brand
+  links: Array<action>
+  backClr: string
 }
 
 export interface PageHeaderProps {
-    centerize?: boolean,
+  centerize?: boolean
 }

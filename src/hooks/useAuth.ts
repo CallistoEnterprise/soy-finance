@@ -24,11 +24,11 @@ const useAuth = () => {
           if (error instanceof UnsupportedChainIdError) {
             const hasSetup = await setupNetwork()
             if (hasSetup) {
-              activate(connector)              
+              activate(connector)
             }
           } else {
             window.localStorage.removeItem(connectorLocalStorageKey)
-            
+
             if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
               console.error('Provider Error', 'No provider was found')
               // toastError('Provider Error', 'No provider was found')

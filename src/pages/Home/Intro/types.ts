@@ -1,5 +1,5 @@
 export interface Background {
-    type: string,
-    name: string,
-    link: string,
+  type: string
+  name: string
+  link: string
 }

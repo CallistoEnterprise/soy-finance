@@ -1,43 +1,41 @@
 import React, { useEffect, useRef } from 'react'
-import styled from 'styled-components';
-import PageHeader from 'components/PageHeader';
-import { Assets } from 'constants/images';
-import 'aos/dist/aos.css';
+import styled from 'styled-components'
+import PageHeader from 'components/PageHeader'
+import { Assets } from 'constants/images'
+import 'aos/dist/aos.css'
 
 const Container = styled.div`
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 `
 const Img = styled.img`
-    width: 100%;
-    margin-top: 100px;
-    @media screen and (max-width: 768px) {
-        margin-top: 80px;
-    }
+  width: 100%;
+  margin-top: 100px;
+  @media screen and (max-width: 768px) {
+    margin-top: 80px;
+  }
 `
 const Roadmap: React.FC = () => {
+  const pageEndRef = useRef(null)
 
-    const pageEndRef = useRef(null);
-    
-    const scrollToBottom = () => {
-        pageEndRef.current.scrollIntoView({ behavior: "smooth" })
-    }
+  const scrollToBottom = () => {
+    pageEndRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
 
-    useEffect(() => {
-        setTimeout(() => {
-            scrollToBottom();
-        }, 1000)
-    }, [pageEndRef])
+  useEffect(() => {
+    setTimeout(() => {
+      scrollToBottom()
+    }, 1000)
+  }, [pageEndRef])
 
-
-    return (
-        <Container>
-            <PageHeader />
-            <Img src={Assets.roadmap} alt="" />
-            <div ref={pageEndRef} />
-        </Container>
-    )
+  return (
+    <Container>
+      <PageHeader />
+      <Img src={Assets.roadmap} alt="" />
+      <div ref={pageEndRef} />
+    </Container>
+  )
 }
 
-export default Roadmap;
+export default Roadmap

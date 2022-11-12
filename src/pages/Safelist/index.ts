@@ -1,1 +1,1 @@
-export { default } from "./Safelist";
+export { default } from './Safelist'

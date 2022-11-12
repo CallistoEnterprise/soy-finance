@@ -112,15 +112,15 @@ export const useGetEthBalance = () => {
 export const GetAirdropInfo = async (account, library) => {
   const airdropContract = await getAirdropContractByWeb3(library || simpleRpcProvider, account)
 
-  const lockperiod = await airdropContract.lockPeriod();
-  const userinfo = await airdropContract.getUserInfo(account);
-  const airdroplen = await airdropContract.getAirdropsLength();
+  const lockperiod = await airdropContract.lockPeriod()
+  const userinfo = await airdropContract.getUserInfo(account)
+  const airdroplen = await airdropContract.getAirdropsLength()
   const calls = []
-  for(let i = 0 ; i < parseInt(airdroplen) ; i++ ) {
+  for (let i = 0; i < parseInt(airdroplen); i++) {
     calls.push(airdropContract.airdrops(i))
   }
-  const airdrops = await Promise.all(calls).then(values => {
-    return values;
+  const airdrops = await Promise.all(calls).then((values) => {
+    return values
   })
 
   return {
@@ -135,8 +135,8 @@ const getAirdropContractByWeb3 = (library, account) => {
 }
 
 export const getChecksumedAddress = (account) => {
-  return Web3.utils.toChecksumAddress(account);
-} 
+  return Web3.utils.toChecksumAddress(account)
+}
 // export const useConfirmBuyToken = () => {
 //   const { account, library } = useWeb3React()
 //   const AirdropContract = getAirdropContractByWeb3(library || simpleRpcProvider, account)

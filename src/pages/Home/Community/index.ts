@@ -1,3 +1,3 @@
-import Discover from './community';
+import Discover from './community'
 
-export default Discover;
+export default Discover

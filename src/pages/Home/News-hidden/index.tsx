@@ -1,11 +1,11 @@
-import { Theme } from 'constants/theme';
-import React from 'react';
-import styled from 'styled-components';
-import { useTranslation } from 'contexts/Localization';
-import Spacer from 'components/Spacer';
-import { useGetBurnedSoy, useGetStakingAPR, useGetFarmsApr } from 'hooks/useMetrics';
-import CardGrid from './cardGrid';
-import FirstCard, { BurnCard, FarmCard, StakingCard } from './cards';
+import { Theme } from 'constants/theme'
+import React from 'react'
+import styled from 'styled-components'
+import { useTranslation } from 'contexts/Localization'
+import Spacer from 'components/Spacer'
+import { useGetBurnedSoy, useGetStakingAPR, useGetFarmsApr } from 'hooks/useMetrics'
+import CardGrid from './cardGrid'
+import FirstCard, { BurnCard, FarmCard, StakingCard } from './cards'
 
 const News = () => {
   const { t } = useTranslation()
@@ -22,9 +22,9 @@ const News = () => {
       </Title>
       <CardGrid>
         <FirstCard />
-        <StakingCard apr = {stakingAPR}/>
-        <FarmCard data = {data}/>
-        <BurnCard burnedSoy = {burnedSoy}/>
+        <StakingCard apr={stakingAPR} />
+        <FarmCard data={data} />
+        <BurnCard burnedSoy={burnedSoy} />
       </CardGrid>
     </Container>
   )
@@ -37,17 +37,17 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   padding: 100px 10% 50px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   @media screen and (max-width: 768px) {
   }
 `
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #AEDD00;
+  background-color: #aedd00;
 `
-const Title = styled.p<{color: string}>`
-  color: ${({color}) => color};
+const Title = styled.p<{ color: string }>`
+  color: ${({ color }) => color};
   font-family: ${Theme.fonts.text};
   font-weight: 700;
   font-size: 73.5px;
@@ -55,9 +55,9 @@ const Title = styled.p<{color: string}>`
   letter-spacing: 5%;
   text-align: center;
   display: flex;
-  @media screen and (max-width: 768px ) {
-      font-size: 50px;
+  @media screen and (max-width: 768px) {
+    font-size: 50px;
   }
-`;
+`
 
 export default News
