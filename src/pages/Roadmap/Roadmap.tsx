@@ -1,18 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import PageHeader from 'components/PageHeader'
+import Page from 'components/layout/Page'
 import { Assets } from 'constants/images'
 import 'aos/dist/aos.css'
 
-const Container = styled.div`
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-`
 const Img = styled.img`
   width: 100%;
   margin-top: 100px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 560px) {
     margin-top: 80px;
   }
 `
@@ -30,11 +25,10 @@ const Roadmap: React.FC = () => {
   }, [pageEndRef])
 
   return (
-    <Container>
-      <PageHeader />
+    <Page hideFooter>
       <Img src={Assets.roadmap} alt="" />
       <div ref={pageEndRef} />
-    </Container>
+    </Page>
   )
 }
 
