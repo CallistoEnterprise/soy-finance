@@ -7,7 +7,7 @@ import Metrics from './Metrics'
 import Community from './Community'
 import CommunityMob from './Community/communityMob'
 import Oneinch from './Oneinch/Oneinch'
-// import News from './News';
+import WhatsNew from './WhatsNew'
 import SoyToken from './SoyToken/soytoken'
 import OneToken from './OneToken/onetoken'
 import 'aos/dist/aos.css'
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
       <Intro />
       <Metrics />
       <Oneinch />
-      {/* <News /> */}
+      <WhatsNew />
       <WebDiv>
         <Community />
       </WebDiv>
