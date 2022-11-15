@@ -1,5 +1,4 @@
 import { LanguageProvider } from 'contexts/Localization'
-import { ToastsProvider } from 'contexts/ToastsContext'
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Web3ReactProvider } from '@web3-react/core'
@@ -12,13 +11,11 @@ const Providers: React.FC = ({ children }) => {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
-        <ToastsProvider>
-          <ThemeContextProvider>
-            <LanguageProvider>
-              <ModalProvider>{children}</ModalProvider>
-            </LanguageProvider>
-          </ThemeContextProvider>
-        </ToastsProvider>
+        <ThemeContextProvider>
+          <LanguageProvider>
+            <ModalProvider>{children}</ModalProvider>
+          </LanguageProvider>
+        </ThemeContextProvider>
       </Provider>
     </Web3ReactProvider>
   )
