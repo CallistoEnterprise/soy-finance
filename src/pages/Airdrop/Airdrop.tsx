@@ -3,7 +3,7 @@ import Page from 'components/layout/Page'
 import AirdropContent from './AirdropContent'
 import 'aos/dist/aos.css'
 
-const Tokenomic: React.FC = () => {
+const Airdrop: React.FC = () => {
   return (
     <Page>
       <AirdropContent />
@@ -11,4 +11,4 @@ const Tokenomic: React.FC = () => {
   )
 }
 
-export default Tokenomic
+export default Airdrop
