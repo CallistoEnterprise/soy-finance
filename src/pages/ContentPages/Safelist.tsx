@@ -7,15 +7,15 @@ import {
   Container,
   Title,
   TopDiv,
-  Div,
+  SpacedDivOnSmallScreens,
   SubTitle,
   Text,
-  Text2,
-  Row,
-  Row2,
+  TextInline,
+  RowReadable,
+  RowBaseFlex,
   Circle,
   BottomDiv,
-} from '../ContentPages/styledComponents'
+} from './styledComponents'
 import 'aos/dist/aos.css'
 
 const Safelist = () => {
@@ -49,12 +49,12 @@ const Safelist = () => {
             )}
           </Text>
           <Spacer height="40px" />
-          <Row>
+          <RowReadable>
             <Circle />
             <Text color="#767676">{t('The Callisto Security Department should have audited the token.')}</Text>
-          </Row>
+          </RowReadable>
           <Spacer height="20px" />
-          <Row>
+          <RowReadable>
             <Circle />
             <Text color="#767676">
               {t('Burn 10 000 SOY tokens by sending them to the')}&nbsp;&nbsp;
@@ -67,51 +67,51 @@ const Safelist = () => {
                 {t('"Burn address"')}.
               </a>
             </Text>
-          </Row>
+          </RowReadable>
         </TopDiv>
         <Spacer height="40px" />
         <BottomDiv>
           <div>
             <Text color={Theme.colors.primary}>{t('Provide the following minimum liquidity:')}</Text>
             <Spacer height="40px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('Ethereum: 50 000 USD.')}</Text>
-            </Row2>
+            </RowBaseFlex>
             <Spacer height="20px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('Callisto Network: 25 000 USD.')}</Text>
-            </Row2>
+            </RowBaseFlex>
             <Spacer height="20px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('Binance Smart Chain: 50 000 USD.')}</Text>
-            </Row2>
+            </RowBaseFlex>
           </div>
-          <Div>
+          <SpacedDivOnSmallScreens>
             <Text color={Theme.colors.primary}>
               {t('Send us the following information to')}
-              <Text2 color={Theme.colors.bgscondary}>
+              <TextInline color={Theme.colors.bgscondary}>
                 <b>&nbsp;{t('Safelist@Soy.Finance.')}</b>
-              </Text2>
+              </TextInline>
             </Text>
             <Spacer height="40px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('The token’s description.')}</Text>
-            </Row2>
+            </RowBaseFlex>
             <Spacer height="20px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('The token’s smart contract address.')}</Text>
-            </Row2>
+            </RowBaseFlex>
             <Spacer height="20px" />
-            <Row2>
+            <RowBaseFlex>
               <Circle />
               <Text color="#767676">{t('The token’s logo ( SVG or PNG 256x256 ).')}</Text>
-            </Row2>
-          </Div>
+            </RowBaseFlex>
+          </SpacedDivOnSmallScreens>
         </BottomDiv>
         <Spacer height="60px" />
         <Text color={Theme.colors.primary}>

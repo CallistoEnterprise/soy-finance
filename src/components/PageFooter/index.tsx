@@ -33,7 +33,7 @@ const PageFooter = () => {
     <Footer id="contact">
       <BkImage>
         <Flex>
-          <Row2>
+          <RowBaseFlex>
             <Itemdiv>
               <Image src={Assets.logowhite} alt="" />
               <Spacer height="10px" />
@@ -83,9 +83,9 @@ const PageFooter = () => {
                 {t('Callisto Enterprise')}
               </StyledLi>
             </Itemdiv>
-          </Row2>
+          </RowBaseFlex>
           <Spacer2 />
-          <Row2>
+          <RowBaseFlex>
             <Itemdiv2>
               <Text>
                 <b>{t('Documentation')}</b>
@@ -153,7 +153,7 @@ const PageFooter = () => {
                 </StyledLi2>
               </Row3>
             </Itemdiv>
-          </Row2>
+          </RowBaseFlex>
           <RightsdivMob>
             <Spacer height="30px" />
             <Text>
@@ -412,7 +412,7 @@ const Row = styled.div`
 const Row3 = styled.div`
   display: flex;
 `
-const Row2 = styled.div`
+const RowBaseFlex = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;

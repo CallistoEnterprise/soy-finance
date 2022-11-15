@@ -8,8 +8,8 @@ import GlobalStyle from 'style/Global'
 import history from './routerHistory'
 
 const Home = lazy(() => import('./pages/Home')) // done
-const Safelist = lazy(() => import('./pages/Safelist')) // done
-const Tokenomic = lazy(() => import('./pages/Tokenomics')) // done
+const Safelist = lazy(() => import('./pages/ContentPages/Safelist')) // done
+const Tokenomic = lazy(() => import('./pages/ContentPages/Tokenomics')) // done
 const Roadmap = lazy(() => import('./pages/Roadmap')) // done
 const Airdrop = lazy(() => import('./pages/Airdrop')) // done
 

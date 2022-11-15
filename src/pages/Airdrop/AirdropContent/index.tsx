@@ -348,7 +348,7 @@ const AirdropContent = () => {
             </FlexBetween>
             {showDetail && account && (
               <DetailContent>
-                <Row2>
+                <RowBaseFlex>
                   <TbDiv>
                     <Text align="left" color={Theme.colors.white}>
                       {t('PhaseId')}
@@ -364,7 +364,7 @@ const AirdropContent = () => {
                       {t('Claim Date')}
                     </Text>
                   </TbDiv2>
-                </Row2>
+                </RowBaseFlex>
                 {Airdrops?.map((item, index) => {
                   // const duration = parseInt(item.duration._hex)
                   // const daysPassed = parseInt(item.daysPassed._hex)
@@ -376,7 +376,7 @@ const AirdropContent = () => {
                     100
                   if (b === 0) return null
                   return (
-                    <Row2 key={item.daysPassed}>
+                    <RowBaseFlex key={item.daysPassed}>
                       <TbDiv>
                         <Text align="left" color={Theme.colors.white}>
                           {index + 1}
@@ -392,7 +392,7 @@ const AirdropContent = () => {
                           {b === 0 ? '---' : datetime.substring(0, 15)}
                         </Text>
                       </TbDiv2>
-                    </Row2>
+                    </RowBaseFlex>
                   )
                 })}
               </DetailContent>
@@ -461,7 +461,7 @@ const Row = styled.div`
 const DetailContent = styled.div`
   width: 100%;
 `
-const Row2 = styled.div`
+const RowBaseFlex = styled.div`
   width: 100%;
   display: flex;
   align-items: center;

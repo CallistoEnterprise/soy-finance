@@ -59,10 +59,10 @@ const CommunityMob = () => {
       </ETCDescSection>
       <CLOETHSection>
         <CLOSection>
-          <Row2>
+          <RowBaseFlex>
             <MarkImg1 sw={innerW} src={Assets.mark8} alt="" data-aos="fade-zoom-in" />
             <MarkBinanceImg src={Assets.bnb} alt="" data-aos="fade-zoom-in" />
-          </Row2>
+          </RowBaseFlex>
           <Spacer height="30px" />
           <TextDiv>
             <Title2 color={Theme.colors.primary} data-aos="fade-zoom-in">
@@ -76,10 +76,10 @@ const CommunityMob = () => {
         </CLOSection>
         <BNBInnerSection>
           <Spacer height="45px" />
-          <Row2>
+          <RowBaseFlex>
             <MarkImg4 sw={innerW} src={Assets.mark7} alt="" data-aos="fade-zoom-in" />
             <SmileImg3 sw={innerW} src={Assets.eth} alt="" data-aos="fade-zoom-in" />
-          </Row2>
+          </RowBaseFlex>
           <Spacer height="50px" />
           <TextDivBNB>
             <Title align="left" data-aos="fade-zoom-in">
@@ -92,10 +92,10 @@ const CommunityMob = () => {
         <SmileRightImg src={Assets.smile2} alt="" />
         <StarRightImg src={Assets.starbnb} alt="" />
         <CLOSection>
-          <Row2>
+          <RowBaseFlex>
             <MarkImg2 sw={innerW} src={Assets.mark9} alt="" data-aos="fade-zoom-in" />
             <MarkPointImg sw={innerW} src={Assets.etc} alt="" data-aos="fade-zoom-in" />
-          </Row2>
+          </RowBaseFlex>
           <TextDivETH>
             <Title align="center" data-aos="fade-zoom-in">
               {t('Ethereum')}
@@ -117,10 +117,10 @@ const CommunityMob = () => {
             </Title>
           </TextDivBNB>
           <Spacer height="45px" />
-          <Row2>
+          <RowBaseFlex>
             <MarkImg4 sw={innerW} src={Assets.mark7} alt="" data-aos="fade-zoom-in" />
             <SmileImg2 sw={innerW} src={Assets.eth} alt="" data-aos="fade-zoom-in" />
-          </Row2>
+          </RowBaseFlex>
         </BNBInnerSection2>
         <StarRightImg src={Assets.starbnb} alt="" />
       </BNBSection>
@@ -187,7 +187,7 @@ const Row = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Row2 = styled.div`
+const RowBaseFlex = styled.div`
   display: flex;
   width: 100%;
   position: relative;

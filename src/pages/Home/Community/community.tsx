@@ -56,10 +56,10 @@ const Community = () => {
       </ETCDescSection>
       <CLOETHSection>
         <CLOSection>
-          <Row2>
+          <RowBaseFlex>
             <MarkImg1 src={Assets.mark8} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
             <MarkBinanceImg src={Assets.bnb} alt="" data-aos="fade-zoom-in" data-aos-delay="2700" />
-          </Row2>
+          </RowBaseFlex>
           <Spacer height="30px" />
           <TextDiv>
             <Title2 color={Theme.colors.primary} data-aos="fade-zoom-in" data-aos-delay="3000">
@@ -72,10 +72,10 @@ const Community = () => {
           <Spacer height="50px" />
         </CLOSection>
         <CLOSection>
-          <Row2>
+          <RowBaseFlex>
             <MarkImg2 src={Assets.mark9} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
             <MarkPointImg src={Assets.point} alt="" data-aos="fade-zoom-in" data-aos-delay="2900" />
-          </Row2>
+          </RowBaseFlex>
           <TextDivETH>
             <Title align="center" data-aos="fade-zoom-in" data-aos-delay="3000">
               {t('Ethereum')}
@@ -97,10 +97,10 @@ const Community = () => {
             </Title>
           </TextDivBNB>
           <Spacer height="45px" />
-          <Row2>
+          <RowBaseFlex>
             <MarkImg4 src={Assets.mark7} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
             <SmileImg2 src={Assets.smile2} alt="" data-aos="fade-zoom-in" data-aos-delay="2800" />
-          </Row2>
+          </RowBaseFlex>
         </BNBInnerSection>
         <StarRightImg src={Assets.starbnb} alt="" />
       </BNBSection>
@@ -181,7 +181,7 @@ const Row = styled.div`
   justify-content: center;
   align-items: center;
 `
-const Row2 = styled.div`
+const RowBaseFlex = styled.div`
   display: flex;
   width: 100%;
   position: relative;

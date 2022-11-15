@@ -9,14 +9,13 @@ import {
   TopDivFullwidth,
   SubTitle,
   Text,
-  Text2,
-  Text3,
-  StyledLi,
+  TextInline,
+  TextNowrap,
   RowFullwidth,
-  Row22,
-  Row33,
+  RowLeftPadded,
+  RowStraight,
   Circle,
-} from '../ContentPages/styledComponents'
+} from './styledComponents'
 import 'aos/dist/aos.css'
 
 const Tokenomics = () => {
@@ -32,9 +31,9 @@ const Tokenomics = () => {
           <Spacer height="40px" />
           <SubTitle color={Theme.colors.bgscondary}>
             {t('Max Supply:')}
-            <Text2 color={Theme.colors.primary}>
+            <TextInline color={Theme.colors.primary}>
               <b>&nbsp;{t('600 000 000 $SOY.')}</b>
-            </Text2>
+            </TextInline>
           </SubTitle>
           <Spacer height="40px" />
           <Text color="#767676">
@@ -80,70 +79,74 @@ const Tokenomics = () => {
             </Text>
           </RowFullwidth>
           <Spacer height="20px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 1')}</b>
-              <Text2 color="#767676">
+              <TextInline color="#767676">
                 &nbsp;
                 {t('- Sowing Soy - PancakeSwap Active Users Airdrop - 500 000 $SOY tokens - 15/10/21 to 30/10/21.')}
-              </Text2>
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 2')}</b>
-              <Text2 color="#767676">
+              <TextInline color="#767676">
                 &nbsp;{t('- Sowing Soy - SushiSwap Active Users Airdrop - 500 000 $SOY tokens - 01/11/21 to 15/11/21.')}
-              </Text2>
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 3')}</b>
-              <Text2 color="#767676">
+              <TextInline color="#767676">
                 &nbsp;{t('- Sowing Soy - UniSwap Active Users Airdrop - 500 000 $SOY tokens - 16/11/21 to 30/11/21.')}
-              </Text2>
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 4')}</b>
-              <Text2 color="#767676">
+              <TextInline color="#767676">
                 &nbsp;{t('- Sowing Soy - 1inch Active Users Airdrop - 500 000 $SOY tokens - 01/12/21 to 15/12/21.')}
-              </Text2>
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 5')}</b>
-              <Text2 color="#767676">
+              <TextInline color="#767676">
                 &nbsp;
                 {t('- Storing Soy - CryptoBot Active Users Airdrop - 1 000 000 $SOY tokens - 16/12/21 to 15/01/21.')}
-              </Text2>
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 6')}</b>
-              <Text2 color="#767676">&nbsp;{t('- Deep Freezing SOY - Details to be published on 10/01/22*.')}</Text2>
+              <TextInline color="#767676">
+                &nbsp;{t('- Deep Freezing SOY - Details to be published on 10/01/22*.')}
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
+          <RowLeftPadded>
             <Text color={Theme.colors.primary}>
               <b>{t('Phase 7')}</b>
-              <Text2 color="#767676">&nbsp;{t('- Harvesting Soy - Details to be published on 25/08/22*.')}</Text2>
+              <TextInline color="#767676">
+                &nbsp;{t('- Harvesting Soy - Details to be published on 25/08/22*.')}
+              </TextInline>
             </Text>
-          </Row22>
+          </RowLeftPadded>
           <Spacer height="10px" />
-          <Row22>
-            <Text2 color="#767676">{t('*Updated on 10/01/22.')}</Text2>
-          </Row22>
+          <RowLeftPadded>
+            <TextInline color="#767676">{t('*Updated on 10/01/22.')}</TextInline>
+          </RowLeftPadded>
           <Spacer height="40px" />
           <SubTitle color={Theme.colors.bgscondary}>{t('Transaction Fees Distribution')}</SubTitle>
           <Spacer height="40px" />
@@ -161,38 +164,38 @@ const Tokenomics = () => {
           <Spacer height="40px" />
           <SubTitle color={Theme.colors.bgscondary}>{t('Fees Distribution Phases Details')}</SubTitle>
           <Spacer height="40px" />
-          <Row33>
-            <Text3 color={Theme.colors.primary}>
+          <RowStraight>
+            <TextNowrap color={Theme.colors.primary}>
               <b>{t('Phase 0')}</b>&nbsp;&nbsp;&nbsp;
-            </Text3>
+            </TextNowrap>
             <Text color="#767676">
               &nbsp;{t('(Until 15/10/21) — The trading fee is set to 0.2% of the volume of each transaction.')}
             </Text>
-          </Row33>
+          </RowStraight>
           <Spacer height="20px" />
-          <Row33>
-            <Text3 color={Theme.colors.primary}>
+          <RowStraight>
+            <TextNowrap color={Theme.colors.primary}>
               <b>{t('Phase 1')}</b>&nbsp;&nbsp;&nbsp;
-            </Text3>
+            </TextNowrap>
             <Text color="#767676">
               &nbsp;
               {t(
                 'SOY Finance will use variable fees from 0.3% to 0.5% to audit the newly listed tokens and increase the platform’s liquidity (lower fee will be applied to larger trades).',
               )}
             </Text>
-          </Row33>
+          </RowStraight>
           <Spacer height="20px" />
-          <Row33>
-            <Text3 color={Theme.colors.primary}>
+          <RowStraight>
+            <TextNowrap color={Theme.colors.primary}>
               <b>{t('Phase 2')}</b>&nbsp;&nbsp;&nbsp;
-            </Text3>
+            </TextNowrap>
             <Text color="#767676">
               &nbsp;
               {t(
                 'In this phase, the trading fee will vary between 0.3% and 0.15% for the audited tokens and the unaudited between 0.5%-0.35%.',
               )}
             </Text>
-          </Row33>
+          </RowStraight>
           <Spacer height="40px" />
           <SubTitle color={Theme.colors.bgscondary}>{t('Burning Mechanisms - “Buyback & Burn”')}</SubTitle>
           <Spacer height="40px" />
@@ -216,14 +219,14 @@ const Tokenomics = () => {
           <SubTitle color={Theme.colors.bgscondary}>{t('Addition Information')}</SubTitle>
           <Spacer height="40px" />
           <Text color="#767676">
-            {t('A full description of Soy Tokenomic can be found in the')}
-            <StyledLi
+            {t('A full description of Soy Tokenomic can be found in the')}&nbsp;
+            <a
               href="https://soy-finance.gitbook.io/soy-finance/articles/monetary-policy-vision"
               target="_blank"
-              color="#615EFF"
+              rel="noreferrer noopener"
             >
-              &nbsp;{t('SOY Monetary Policy.')}
-            </StyledLi>
+              <TextInline color="#615EFF">{t('SOY Monetary Policy.')}</TextInline>
+            </a>
           </Text>
           <Spacer height="20px" />
         </TopDivFullwidth>
