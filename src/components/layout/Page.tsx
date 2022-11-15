@@ -1,20 +1,21 @@
-import styled from 'styled-components'
+import React from 'react'
+import PageHeader from 'components/PageHeader'
+import PageFooter from 'components/PageFooter'
 import Container from './Container'
 
-const Page = styled(Container)`
-  min-height: calc(100vh - 64px);
-  padding-top: 16px;
-  padding-bottom: 16px;
+export interface PageProps {
+  centerize?: boolean,
+  hideFooter?: boolean
+}
 
-  ${({ theme }) => theme.mediaQueries.sm} {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-`
+const Page:React.FC<PageProps> = ({centerize, hideFooter, children}) => {
+  return (
+    <Container>
+      <PageHeader centerize={centerize} />
+      {children}
+      {!hideFooter && <PageFooter />}
+    </Container>
+  )
+}
 
 export default Page
