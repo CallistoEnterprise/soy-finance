@@ -19,7 +19,7 @@ const OneToken = () => {
       <SpaceRow>
         <div className="col-lg-6 col-md-6" data-aos="fade-right" data-aos-delay="300">
           <Title color={Theme.colors.primary}>
-            <Title color="#AEDD00">{t('Defi')}&nbsp;</Title>
+            <span style={{ color: '#AEDD00' }}>{t('Defi')}&nbsp;</span>
             {t('Made Safe')}
           </Title>
           <Spacer height="20px" />

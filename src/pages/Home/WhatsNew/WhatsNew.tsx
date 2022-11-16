@@ -36,7 +36,7 @@ const WhatsNew = () => {
 
         <div style={{ margin: '40px' }}>
           <WhatsNewSubtitle color={Theme.colors.primary}>
-            {t("What's new on")}&nbsp;<WhatsNewSubtitle color="#AEDD00">{t('SOY?')}</WhatsNewSubtitle>
+            {t("What's new on")}&nbsp;<span style={{ color: '#AEDD00' }}>{t('SOY?')}</span>
           </WhatsNewSubtitle>
         </div>
 
