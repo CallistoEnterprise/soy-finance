@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import Page from 'components/layout/Page'
+import Page from 'components/Layout/Page'
 import { Assets } from 'constants/images'
 import 'aos/dist/aos.css'
 

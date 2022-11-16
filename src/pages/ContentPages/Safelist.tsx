@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import Spacer from 'components/Spacer'
-import Page from 'components/layout/Page'
+import Page from 'components/Layout/Page'
 import { Theme } from 'constants/theme'
 import {
   Container,

@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { Theme } from 'constants/theme'
 import Spacer from 'components/Spacer'
-import Page from 'components/layout/Page'
+import Page from 'components/Layout/Page'
 import {
   Container,
   Title,

@@ -5,6 +5,7 @@ import { useTranslation } from 'contexts/Localization'
 import { useGetBurnedSoy, useStakingAPR, useFarmingAPR } from 'hooks/useMetrics'
 import { CALLISTO_CHAIN_ID } from '@callisto-enterprise/chain-constants'
 import { TOKENLIST } from '@callisto-enterprise/assetslist'
+import contracts from 'constants/contracts'
 
 import Line from 'components/Line'
 
@@ -26,7 +27,7 @@ const WhatsNew = () => {
   const getIconByAddress = (address: string) => {
     return mainnetTokens.find((entry) => entry.address.toLowerCase() === address.toLowerCase()).image
   }
-  const soyIcon = getIconByAddress('0x9FaE2529863bD691B4A7171bDfCf33C7ebB10a65') // todo refactor the hardcoded address
+  const soyIcon = getIconByAddress(contracts.soyToken)
 
   return (
     <Container>
