@@ -11,6 +11,7 @@ export const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
 }
 
+/* Is not used, uncomment or delete whenever
 export const marketcapIds = {
   ccXMS: 10030,
   ccBCOIN: 12252,
@@ -37,3 +38,4 @@ export const marketcapIds = {
   ccFTM: 3513,
   ccANTEX: 11708,
 }
+*/
