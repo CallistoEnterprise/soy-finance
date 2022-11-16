@@ -10,7 +10,7 @@ import contracts from 'constants/contracts'
 import Line from 'components/Line'
 
 import WhatsNewXT from 'assets/images/WhatsNewXT.png'
-import WhatsNewStaking from 'assets/images/WhatsNewStaking.png'
+import WhatsNewStaking from 'assets/images/WhatsNewStaking.webp'
 import WhatsNewFarming from 'assets/images/WhatsNewFarming.png'
 import WhatsNewBurn from 'assets/images/WhatsNewBurn.png'
 
