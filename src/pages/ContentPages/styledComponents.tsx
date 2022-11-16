@@ -56,9 +56,8 @@ export const Text = styled.p<{ color: string }>`
   @media screen and (max-width: 768px) {
   }
 `
-export const TextInline = styled(Text)`
-  white-space: pre-line;
-  word-break: break-all;
+export const SpanInline = styled.span<{ color: string }>`
+  color: ${({ color }) => color};
   display: inline;
 `
 export const TextNowrap = styled(Text)`

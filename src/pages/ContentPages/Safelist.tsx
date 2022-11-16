@@ -10,7 +10,7 @@ import {
   SpacedDivOnSmallScreens,
   SubTitle,
   Text,
-  TextInline,
+  SpanInline,
   RowReadable,
   RowBaseFlex,
   Circle,
@@ -92,9 +92,9 @@ const Safelist = () => {
           <SpacedDivOnSmallScreens>
             <Text color={Theme.colors.primary}>
               {t('Send us the following information to')}
-              <TextInline color={Theme.colors.bgscondary}>
+              <SpanInline color={Theme.colors.bgscondary}>
                 <b>&nbsp;{t('Safelist@Soy.Finance.')}</b>
-              </TextInline>
+              </SpanInline>
             </Text>
             <Spacer height="40px" />
             <RowBaseFlex>
