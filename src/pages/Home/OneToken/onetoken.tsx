@@ -26,15 +26,15 @@ const OneToken = () => {
         </LiButton>
       </Wrapper>
 
-      <BkImage1 src={Assets.back5} alt="" />
-      <RockImage1 src={Assets.rock} alt="" />
-      <LeftAniImg1 src={Assets.anileft} alt="" data-aos="fade-right" />
-      <RightAniImg1 src={Assets.aniright} alt="" data-aos="fade-left" />
+      <BkImage1 src={Assets.back5} alt="decorative image" />
+      <RockImage1 src={Assets.rock} alt="decorative image" />
+      <LeftAniImg1 src={Assets.anileft} alt="decorative image" data-aos="fade-right" />
+      <RightAniImg1 src={Assets.aniright} alt="decorative image" data-aos="fade-left" />
 
       <BkImage>
-        <RockImage src={Assets.rock} alt="" />
-        <LeftAniImg src={Assets.anileft} alt="" data-aos="fade-right" />
-        <RightAniImg src={Assets.aniright} alt="" data-aos="fade-left" />
+        <RockImage src={Assets.rock} alt="decorative image" />
+        <LeftAniImg src={Assets.anileft} alt="decorative image" data-aos="fade-right" />
+        <RightAniImg src={Assets.aniright} alt="decorative image" data-aos="fade-left" />
       </BkImage>
     </Container>
   )

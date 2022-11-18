@@ -26,20 +26,20 @@ const Community = () => {
       <Spacer height="150px" />
       <OutCircleImg data-aos="fade-zoom-out" data-aos-delay="1000" />
       <InnerCircleImg data-aos="rotate-ac" data-aos-delay="500" />
-      <LogoImg src={Assets.logo2} alt="" data-aos="fade-zoom-in" />
-      <SmileImg src={Assets.smile1} alt="" data-aos="fade-zoom-in" data-aos-delay="1500" />
-      <EtcImg src={Assets.eth} alt="" data-aos="fade-zoom-in" data-aos-delay="1800" />
-      <CloImg src={Assets.clo} alt="" data-aos="fade-zoom-in" data-aos-delay="2100" />
-      <EthImg src={Assets.etc} alt="" data-aos="fade-zoom-in" data-aos-delay="2400" />
+      <LogoImg src={Assets.logo2} alt="decorative image" data-aos="fade-zoom-in" />
+      <SmileImg src={Assets.smile1} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="1500" />
+      <EtcImg src={Assets.eth} alt="ETH" data-aos="fade-zoom-in" data-aos-delay="1800" />
+      <CloImg src={Assets.clo} alt="CLO" data-aos="fade-zoom-in" data-aos-delay="2100" />
+      <EthImg src={Assets.etc} alt="ETC" data-aos="fade-zoom-in" data-aos-delay="2400" />
 
-      <VBridgeImg src={Assets.mark10} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
+      <VBridgeImg src={Assets.mark10} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2600" />
       <BottomImg />
       <ETCMarkDiv data-aos="fade-zoom-in" data-aos-delay="500">
-        <LeftAniImg src={Assets.mark12} alt="" />
-        <Image src={Assets.line} alt="" />
-        <RightAniImg src={Assets.mark13} alt="" />
-        <LeftStarImg src={Assets.starleft} alt="" />
-        <RightStarImg src={Assets.starright} alt="" />
+        <LeftAniImg src={Assets.mark12} alt="decorative image" />
+        <Image src={Assets.line} alt="decorative image" />
+        <RightAniImg src={Assets.mark13} alt="decorative image" />
+        <LeftStarImg src={Assets.starleft} alt="decorative image" />
+        <RightStarImg src={Assets.starright} alt="decorative image" />
       </ETCMarkDiv>
       <ETCDescSection>
         <Title align="center" color={Theme.colors.primary} data-aos="fade-zoom-in" data-aos-delay="500">
@@ -57,8 +57,8 @@ const Community = () => {
       <CLOETHSection>
         <CLOSection>
           <RowBaseFlex>
-            <MarkImg1 src={Assets.mark8} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
-            <MarkBinanceImg src={Assets.bnb} alt="" data-aos="fade-zoom-in" data-aos-delay="2700" />
+            <MarkImg1 src={Assets.mark8} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2600" />
+            <MarkBinanceImg src={Assets.bnb} alt="BNB" data-aos="fade-zoom-in" data-aos-delay="2700" />
           </RowBaseFlex>
           <Spacer height="30px" />
           <TextDiv>
@@ -73,8 +73,8 @@ const Community = () => {
         </CLOSection>
         <CLOSection>
           <RowBaseFlex>
-            <MarkImg2 src={Assets.mark9} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
-            <MarkPointImg src={Assets.point} alt="" data-aos="fade-zoom-in" data-aos-delay="2900" />
+            <MarkImg2 src={Assets.mark9} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2600" />
+            <MarkPointImg src={Assets.point} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2900" />
           </RowBaseFlex>
           <TextDivETH>
             <Title align="center" data-aos="fade-zoom-in" data-aos-delay="3000">
@@ -85,11 +85,11 @@ const Community = () => {
             </Title>
           </TextDivETH>
         </CLOSection>
-        <StarLeftImg src={Assets.starclo} alt="" />
+        <StarLeftImg src={Assets.starclo} alt="decorative image" />
       </CLOETHSection>
       <BNBSection>
         <BNBInnerSection>
-          <MarkImg3 src={Assets.mark6} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
+          <MarkImg3 src={Assets.mark6} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2600" />
           <Spacer height="175px" />
           <TextDivBNB>
             <Title align="left" data-aos="fade-zoom-in" data-aos-delay="3000">
@@ -98,11 +98,11 @@ const Community = () => {
           </TextDivBNB>
           <Spacer height="45px" />
           <RowBaseFlex>
-            <MarkImg4 src={Assets.mark7} alt="" data-aos="fade-zoom-in" data-aos-delay="2600" />
-            <SmileImg2 src={Assets.smile2} alt="" data-aos="fade-zoom-in" data-aos-delay="2800" />
+            <MarkImg4 src={Assets.mark7} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2600" />
+            <SmileImg2 src={Assets.smile2} alt="decorative image" data-aos="fade-zoom-in" data-aos-delay="2800" />
           </RowBaseFlex>
         </BNBInnerSection>
-        <StarRightImg src={Assets.starbnb} alt="" />
+        <StarRightImg src={Assets.starbnb} alt="decorative image" />
       </BNBSection>
     </Container>
   )

@@ -44,7 +44,7 @@ const Intro = () => {
         <source src="Mainmobile.webm" type="video/webm" />
       </StyledVideoMob>
       <ScrollDiv onClick={handleScroll}>
-        <SideImageMob src={Assets.scrolling} alt="" />
+        <SideImageMob src={Assets.scrolling} alt="Scroll Down Button" />
       </ScrollDiv>
     </Container>
   )

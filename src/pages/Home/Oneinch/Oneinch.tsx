@@ -13,8 +13,8 @@ const OneToken = () => {
   return (
     <Container>
       <BkImage />
-      <MobBkImage src={Assets.mobmark3} alt="" />
-      <LeftAniImg src={Assets.char} alt="" data-aos="fade-right" />
+      <MobBkImage src={Assets.mobmark3} alt="decorative image" />
+      <LeftAniImg src={Assets.char} alt="decorative image" data-aos="fade-right" />
 
       <SpaceRow>
         <div className="col-lg-6 col-md-6" data-aos="fade-right" data-aos-delay="300">

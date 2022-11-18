@@ -26,7 +26,7 @@ const Roadmap: React.FC = () => {
 
   return (
     <Page hideFooter>
-      <Img src={Assets.roadmap} alt="" />
+      <Img src={Assets.roadmap} alt="Roadmap Graphic" />
       <div ref={pageEndRef} />
     </Page>
   )

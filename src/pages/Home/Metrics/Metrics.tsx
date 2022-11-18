@@ -102,8 +102,8 @@ const Metrics = () => {
           </SubFlex>
         </Flex>
       </Content>
-      <BackImg src={Assets.metricbg} alt="" />
-      <BackImgMob src={Assets.mobmetricbg} alt="" />
+      <BackImg src={Assets.metricbg} alt="Background" />
+      <BackImgMob src={Assets.mobmetricbg} alt="Background" />
     </Container>
   )
 }

@@ -34,7 +34,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ centerize = false }) => {
     >
       <Navbar.Brand href="/">
         <Logo>
-          <LogoImg src={Assets.logo} className="App-logo" alt="logo" />
+          <LogoImg src={Assets.logo} className="App-logo" alt="Soy Finance Logo" />
         </Logo>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

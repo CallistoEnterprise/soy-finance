@@ -36,14 +36,14 @@ const CommunityMob = () => {
       <Spacer height="100px" />
       <BottomImg />
       <ETCMarkDiv data-aos="fade-zoom-in">
-        <LeftAniImg src={Assets.mark12} alt="" />
-        <Image src={Assets.line} alt="" />
-        <RightAniImg src={Assets.mark13} alt="" />
-        <LeftStarImg src={Assets.starleft} alt="" />
-        <RightStarImg src={Assets.starright} alt="" />
+        <LeftAniImg src={Assets.mark12} alt="decorative image" />
+        <Image src={Assets.line} alt="decorative image" />
+        <RightAniImg src={Assets.mark13} alt="decorative image" />
+        <LeftStarImg src={Assets.starleft} alt="decorative image" />
+        <RightStarImg src={Assets.starright} alt="decorative image" />
       </ETCMarkDiv>
       <ETCDescSection>
-        <MarkImgClo src={Assets.clo} alt="" />
+        <MarkImgClo src={Assets.clo} alt="CLO" />
         <Spacer height="10px" />
         <Title align="center" color={Theme.colors.primary} data-aos="fade-zoom-in">
           {t('Callisto Network')}
@@ -60,8 +60,8 @@ const CommunityMob = () => {
       <CLOETHSection>
         <CLOSection>
           <RowBaseFlex>
-            <MarkImg1 sw={innerW} src={Assets.mark8} alt="" data-aos="fade-zoom-in" />
-            <MarkBinanceImg src={Assets.bnb} alt="" data-aos="fade-zoom-in" />
+            <MarkImg1 sw={innerW} src={Assets.mark8} alt="decorative image" data-aos="fade-zoom-in" />
+            <MarkBinanceImg src={Assets.bnb} alt="BNB" data-aos="fade-zoom-in" />
           </RowBaseFlex>
           <Spacer height="30px" />
           <TextDiv>
@@ -77,8 +77,8 @@ const CommunityMob = () => {
         <BNBInnerSection>
           <Spacer height="45px" />
           <RowBaseFlex>
-            <MarkImg4 sw={innerW} src={Assets.mark7} alt="" data-aos="fade-zoom-in" />
-            <SmileImg3 sw={innerW} src={Assets.eth} alt="" data-aos="fade-zoom-in" />
+            <MarkImg4 sw={innerW} src={Assets.mark7} alt="decorative image" data-aos="fade-zoom-in" />
+            <SmileImg3 sw={innerW} src={Assets.eth} alt="ETH" data-aos="fade-zoom-in" />
           </RowBaseFlex>
           <Spacer height="50px" />
           <TextDivBNB>
@@ -89,12 +89,12 @@ const CommunityMob = () => {
 
           <Spacer height="50px" />
         </BNBInnerSection>
-        <SmileRightImg src={Assets.smile2} alt="" />
-        <StarRightImg src={Assets.starbnb} alt="" />
+        <SmileRightImg src={Assets.smile2} alt="decorative image" />
+        <StarRightImg src={Assets.starbnb} alt="BNB" />
         <CLOSection>
           <RowBaseFlex>
-            <MarkImg2 sw={innerW} src={Assets.mark9} alt="" data-aos="fade-zoom-in" />
-            <MarkPointImg sw={innerW} src={Assets.etc} alt="" data-aos="fade-zoom-in" />
+            <MarkImg2 sw={innerW} src={Assets.mark9} alt="decorative image" data-aos="fade-zoom-in" />
+            <MarkPointImg sw={innerW} src={Assets.etc} alt="ETC" data-aos="fade-zoom-in" />
           </RowBaseFlex>
           <TextDivETH>
             <Title align="center" data-aos="fade-zoom-in">
@@ -105,7 +105,7 @@ const CommunityMob = () => {
             </Title>
           </TextDivETH>
         </CLOSection>
-        <StarLeftImg src={Assets.starclo} alt="" />
+        <StarLeftImg src={Assets.starclo} alt="decorative image" />
       </CLOETHSection>
       <BNBSection>
         <BNBInnerSection2>
@@ -118,11 +118,11 @@ const CommunityMob = () => {
           </TextDivBNB>
           <Spacer height="45px" />
           <RowBaseFlex>
-            <MarkImg4 sw={innerW} src={Assets.mark7} alt="" data-aos="fade-zoom-in" />
-            <SmileImg2 sw={innerW} src={Assets.eth} alt="" data-aos="fade-zoom-in" />
+            <MarkImg4 sw={innerW} src={Assets.mark7} alt="decorative image" data-aos="fade-zoom-in" />
+            <SmileImg2 sw={innerW} src={Assets.eth} alt="ETH" data-aos="fade-zoom-in" />
           </RowBaseFlex>
         </BNBInnerSection2>
-        <StarRightImg src={Assets.starbnb} alt="" />
+        <StarRightImg src={Assets.starbnb} alt="decorative image" />
       </BNBSection>
     </Container>
   )

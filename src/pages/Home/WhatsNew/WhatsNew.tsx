@@ -62,7 +62,7 @@ const WhatsNew = () => {
             <StyledCardSubTitle>{t('Stake Soy, Earn SOY')}</StyledCardSubTitle>
             {stakingAPR !== 0 && (
               <CardBlob style={{ paddingLeft: '30px', paddingRight: '30px' }}>
-                <CardBlobAsset src={soyIcon} alt="" />
+                <CardBlobAsset src={soyIcon} alt="SOY" />
                 <StyledCardText style={{ fontWeight: 600 }}>
                   {t('APR')}: {stakingAPR.toFixed(2)}%
                 </StyledCardText>
@@ -77,9 +77,9 @@ const WhatsNew = () => {
 
               return (
                 <CardBlob key={farm.lp}>
-                  <CardBlobAsset src={getIconByAddress(farm.token0)} alt="" />
+                  <CardBlobAsset src={getIconByAddress(farm.token0)} alt="Token 1" />
                   <StyledCardText style={{ fontWeight: 600 }}>+</StyledCardText>
-                  <CardBlobAsset src={getIconByAddress(farm.token1)} alt="" />
+                  <CardBlobAsset src={getIconByAddress(farm.token1)} alt="Token 2" />
                   <StyledCardText>
                     <span style={{ fontWeight: 600 }}>{farm.name.replace('-', ' - ')}</span>
                     <br />

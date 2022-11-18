@@ -35,7 +35,7 @@ const PageFooter = () => {
         <Flex>
           <RowBaseFlex>
             <Itemdiv>
-              <Image src={Assets.logowhite} alt="" />
+              <Image src={Assets.logowhite} alt="Soy Finance Logo" />
               <Spacer height="10px" />
               <RightsdivWeb>
                 <Text>{t('All rights reserved by')}</Text>
@@ -133,20 +133,19 @@ const PageFooter = () => {
                   <Facebook />
                 </StyledLi2>
                 <StyledLi2 href="https://soy-finance.gitbook.io/" target="_blank">
-                  {/* <img src={Assets.medium} width="40px" height="40px" alt=""/> */}
                   <Gitbook />
                 </StyledLi2>
               </Row>
               <Spacer height="10px" />
               <Row3>
                 <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
-                  <img src={Assets.CMCIcon} width="38px" height="38px" alt="" />
+                  <img src={Assets.CMCIcon} width="38px" height="38px" alt="CoinMarketCap" />
                 </StyledLi2>
                 <StyledLi2 href="https://www.coingecko.com/en/coins/soy-finance" target="_blank">
-                  <img src={Assets.coingecko} width="38px" height="38px" alt="" />
+                  <img src={Assets.coingecko} width="38px" height="38px" alt="Coingecko" />
                 </StyledLi2>
                 <StyledLi2 href="https://coinpaprika.com/coin/soy-soy-finance/" target="_blank">
-                  <img src={Assets.coinpap} width="40px" height="40px" alt="" />
+                  <img src={Assets.coinpap} width="40px" height="40px" alt="Coinpaprika" />
                 </StyledLi2>
                 <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank">
                   <Pulse width="38px" height="38px" />
@@ -165,7 +164,7 @@ const PageFooter = () => {
       <WebDiv>
         <Flex>
           <div>
-            <Image src={Assets.logowhite} alt="" />
+            <Image src={Assets.logowhite} alt="Soy Finance Logo" />
             <Spacer height="10px" />
             <Text>{t('All rights reserved by')}</Text>
             <Spacer height="5px" />
@@ -264,13 +263,13 @@ const PageFooter = () => {
             <Spacer height="10px" />
             <Row3>
               <StyledLi2 href="https://coinmarketcap.com/currencies/soy-finance/" target="_blank">
-                <img src={Assets.CMCIcon} width="40px" height="40px" alt="" />
+                <img src={Assets.CMCIcon} width="40px" height="40px" alt="CoinMarketCap" />
               </StyledLi2>
               <StyledLi2 href="https://www.coingecko.com/en/coins/soy-finance" target="_blank">
-                <img src={Assets.coingecko} width="40px" height="40px" alt="" />
+                <img src={Assets.coingecko} width="40px" height="40px" alt="Coingecko" />
               </StyledLi2>
               <StyledLi2 href="https://coinpaprika.com/coin/soy-soy-finance/" target="_blank">
-                <img src={Assets.coinpap} width="40px" height="40px" alt="" />
+                <img src={Assets.coinpap} width="40px" height="40px" alt="Coinpaprika" />
               </StyledLi2>
               <StyledLi2 href="https://defillama.com/protocol/soy-finance" target="_blank">
                 <Pulse width="38px" height="38px" />
@@ -278,7 +277,7 @@ const PageFooter = () => {
             </Row3>
           </div>
         </Flex>
-        <BkImage2 src={Assets.footerback} alt="" />
+        <BkImage2 src={Assets.footerback} alt="Background Image" />
       </WebDiv>
     </Footer>
   )

@@ -299,8 +299,8 @@ const Airdrop = () => {
           </div>
         )}
         <Container>
-          <Img src={Assets.airback} alt="" />
-          <ImgUFO src={Assets.ufo} alt="" />
+          <Img src={Assets.airback} alt="Background Image" />
+          <ImgUFO src={Assets.ufo} alt="Background Image" />
           <StyledModal>
             <Title color={Theme.colors.white}>{t('Claim Your SOY Tokens')}</Title>
             {account && userStatus !== '' && <Spacer height="10px" />}
@@ -347,7 +347,7 @@ const Airdrop = () => {
                   </Row>
                   <Spacer height="2px" />
                 </div>
-                <img src={Assets.soywhite} alt="" />
+                <img src={Assets.soywhite} alt="Soy Token Logo" />
               </FlexBetween>
               {showDetail && account && (
                 <DetailContent>
@@ -403,7 +403,7 @@ const Airdrop = () => {
             </Column>
             <Spacer height="20px" />
             <AddButton onClick={() => registerToken(contracts.soyToken, 'SOY', 18)}>
-              <img src={Assets.token} alt="" style={{ height: 30, marginRight: 10 }} />
+              <img src={Assets.token} alt="Token logo" style={{ height: 30, marginRight: 10 }} />
               <Text align="center" color={Theme.colors.white}>
                 {t('Add to Metamask')}
               </Text>
