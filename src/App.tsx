@@ -21,7 +21,8 @@ const App: React.FC = () => {
       <SuspenseWithChunkError fallback={<PageLoader />}>
         <Switch>
           <Route path="/" exact>
-            <Home />
+            {/* <Home /> */}
+            <p>hello rendered</p>
           </Route>
           <Route path="/safelist" exact>
             <Safelist />
