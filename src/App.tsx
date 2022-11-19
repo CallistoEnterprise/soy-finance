@@ -7,7 +7,6 @@ import PageLoader from 'components/PageLoader'
 import GlobalStyle from 'style/Global'
 import history from './routerHistory'
 
-const Home = lazy(() => import('./pages/Home'))
 const Safelist = lazy(() => import('./pages/ContentPages/Safelist'))
 const Tokenomic = lazy(() => import('./pages/ContentPages/Tokenomics'))
 const Roadmap = lazy(() => import('./pages/Roadmap'))
