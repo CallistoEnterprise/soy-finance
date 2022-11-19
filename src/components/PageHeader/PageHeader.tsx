@@ -98,8 +98,8 @@ const Logo = styled.div`
 const LogoImg = styled.img`
   z-index: 1;
   margin-left: 20px;
-  min-width: 130px;
-  max-width: 130px;
+  min-width: 135px;
+  max-width: 135px;
   @media screen and (max-width: 1050px) {
   }
   @media (max-width: 510px) {

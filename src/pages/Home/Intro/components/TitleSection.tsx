@@ -34,7 +34,7 @@ const Titlepre = styled.p`
   font-size: 79px;
   line-height: 157px;
   color: ${Theme.colors.primary};
-  font-family: Beautiful;
+  font-family: Beautiful, Arial;
   width: 100%;
   text-align: center;
   letter-spacing: 0.05em;
