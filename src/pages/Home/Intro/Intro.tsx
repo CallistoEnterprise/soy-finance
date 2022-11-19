@@ -37,10 +37,10 @@ const Intro = () => {
       </LiButton>
       <Spacer height="20px" />
       <LiButton2 href="/airdrop">{t('SOY Airdrop')}</LiButton2>
-      <StyledVideo autoPlay muted loop id="main">
+      <StyledVideo autoPlay muted loop id="main" poster="/Main.poster.webp">
         <source src="Main.webm" type="video/webm" />
       </StyledVideo>
-      <StyledVideoMob autoPlay muted loop id="main">
+      <StyledVideoMob autoPlay muted loop id="main" poster="/Mainmobile.poster.webp">
         <source src="Mainmobile.webm" type="video/webm" />
       </StyledVideoMob>
       <ScrollDiv onClick={handleScroll}>
