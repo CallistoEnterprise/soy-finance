@@ -36,7 +36,7 @@ const Intro = () => {
         {t('Launch Soy Finance')}
       </LiButton>
       <Spacer height="20px" />
-      <LiButton2 href="/airdrop">{t('SOY Airdrop')}</LiButton2>
+      {/* <LiButton2 href="/airdrop">{t('SOY Airdrop')}</LiButton2> */}
       <StyledVideo autoPlay muted loop id="main" poster="/Main.poster.webp">
         <source src="Main.webm" type="video/webm" />
       </StyledVideo>
@@ -128,34 +128,10 @@ const Row = styled.div`
 const LiButton = styled.a`
   color: white;
   background-color: ${Theme.colors.bgscondary};
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   font-family: ${Theme.fonts.text};
   height: 40px;
-  padding: 10px 30px;
-  border-radius: 30px;
-  text-decoration: none !important;
-  white-space: nowrap;
-  z-index: 9;
-  display: none;
-
-  &:hover {
-    color: #000;
-  }
-  @media screen and (max-width: 768px) {
-    display: block;
-
-    margin: 0px;
-    // max-width: 200px;
-  }
-`
-const LiButton2 = styled.a`
-  color: white;
-  background-color: ${Theme.colors.bgscondary};
-  font-size: 16px;
-  font-weight: 700;
-  font-family: ${Theme.fonts.text};
-  height: 35px;
   padding: 10px 30px;
   border-radius: 30px;
   text-decoration: none !important;

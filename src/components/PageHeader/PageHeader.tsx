@@ -58,9 +58,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ centerize = false }) => {
               {t('SOY Bridge')}
             </Nav.Link>
           </Li>
-          <LiButton href="https://app.soy.finance/#/swap" target="_blank">
+          {/* <LiButton href="https://app.soy.finance/#/swap" target="_blank">
             {t('Launch Soy Finance')}
-          </LiButton>
+          </LiButton> */}
+          <LiButton href="/airdrop">{t('SOY Airdrop')}</LiButton>
           <Li>
             <NavDropdown title={langTitle[`${currentLanguage.locale}`]} id="collasible-nav-dropdown">
               <NavDropdown.Item onClick={() => handleChangeLang('en-US')}>EN</NavDropdown.Item>
