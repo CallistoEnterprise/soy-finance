@@ -13,7 +13,7 @@ const OneToken = () => {
   return (
     <Container>
       <BkImage />
-      <MobBkImage src={Assets.mobmark3} alt="decorative image" />
+      <MobBkImage />
       <LeftAniImg src={Assets.char} alt="decorative image" data-aos="fade-right" />
 
       <SpaceRow>
@@ -105,25 +105,25 @@ const BkImage = styled.div`
   background-image: url(${Assets.mark3});
   background-position: left;
   background-repeat: no-repeat;
-  background-size: cover;
-  @media screen and (max-width: 1400px) {
-    background-size: cover;
-  }
+  background-size: auto;
   @media screen and (max-width: 768px) {
     display: none;
   }
 `
-const MobBkImage = styled.img`
-  position: absolute;
+
+const MobBkImage = styled(BkImage)`
   width: 100%;
-  height: 100px;
+  height: 200px;
   min-height: 200px;
   top: -60px;
+  background-image: url(${Assets.mobmark3});
+  background-size: 100% 100%;
   display: none;
   @media screen and (max-width: 768px) {
     display: block;
   }
 `
+
 const LeftAniImg = styled.img`
   position: absolute;
   top: 150px;
