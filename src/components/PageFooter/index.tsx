@@ -32,10 +32,11 @@ const PageFooter = () => {
   return (
     <Footer id="contact">
       <BkImage>
+        {/* mobile display... todo rename */}
         <Flex>
           <RowBaseFlex>
             <Itemdiv>
-              <Image src={Assets.logowhite} alt="Soy Finance Logo" />
+              <img src={Assets.logowhite} alt="Soy Finance Logo" width={160} />
               <Spacer height="10px" />
               <RightsdivWeb>
                 <Text>{t('All rights reserved by')}</Text>
@@ -164,7 +165,7 @@ const PageFooter = () => {
       <WebDiv>
         <Flex>
           <div>
-            <Image src={Assets.logowhite} alt="Soy Finance Logo" />
+            <Image src={Assets.logowhite} alt="Soy Finance Logo" width={160} />
             <Spacer height="10px" />
             <Text>{t('All rights reserved by')}</Text>
             <Spacer height="5px" />
