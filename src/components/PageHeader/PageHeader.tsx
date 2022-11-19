@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { ExternalLink } from 'components/Svg'
 import { Theme } from 'constants/theme'
 import { Assets } from 'constants/images'
 import './PageHeader.scss'
@@ -42,14 +43,21 @@ const PageHeader: React.FC<PageHeaderProps> = ({ centerize = false }) => {
         <Nav className="ml-auto">
           <Li>
             <NavDropdown title={t('Soy Finance')} id="collasible-nav-dropdown">
-              <NavDropdown.Item href="https://clo.click/how_to" target="_blank">
-                {t('Tutorials')}
-              </NavDropdown.Item>
               <NavDropdown.Item href="/roadmap">{t('Roadmap')}</NavDropdown.Item>
               <NavDropdown.Item href="/tokenomic">{t('SOY Tokenomics')}</NavDropdown.Item>
               <NavDropdown.Item href="/safelist">{t('Safelisting')}</NavDropdown.Item>
+              <NavDropdown.Item href="/airdrop">{t('SOY Airdrop')}</NavDropdown.Item>
+              <NavDropdown.Item href="https://clo.click/how_to" target="_blank">
+                <div style={{ display: 'flex' }}>
+                  <ExternalLink width={14} />
+                  &nbsp;{t('Tutorials')}
+                </div>{' '}
+              </NavDropdown.Item>
               <NavDropdown.Item href="https://bullsinvesting.club/" target="_blank">
-                {t('BUSDT Stable Coin')}
+                <div style={{ display: 'flex' }}>
+                  <ExternalLink width={14} />
+                  &nbsp;{t('BUSDT Stablecoin')}
+                </div>
               </NavDropdown.Item>
             </NavDropdown>
           </Li>
