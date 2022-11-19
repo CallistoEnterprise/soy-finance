@@ -7,6 +7,7 @@ import PageLoader from 'components/PageLoader'
 import GlobalStyle from 'style/Global'
 import history from './routerHistory'
 
+const Home = lazy(() => import('./pages/Home'))
 const Safelist = lazy(() => import('./pages/ContentPages/Safelist'))
 const Tokenomic = lazy(() => import('./pages/ContentPages/Tokenomics'))
 const Roadmap = lazy(() => import('./pages/Roadmap'))
@@ -20,8 +21,7 @@ const App: React.FC = () => {
       <SuspenseWithChunkError fallback={<PageLoader />}>
         <Switch>
           <Route path="/" exact>
-            {/* <Home /> */}
-            <p>hello rendered</p>
+            <Home />
           </Route>
           <Route path="/safelist" exact>
             <Safelist />
