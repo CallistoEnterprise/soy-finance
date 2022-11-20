@@ -49,14 +49,14 @@ const PageHeader: React.FC<PageHeaderProps> = ({ centerize = false }) => {
               <NavDropdown.Item href="/airdrop">{t('SOY Airdrop')}</NavDropdown.Item>
               <NavDropdown.Item href="https://clo.click/how_to" target="_blank">
                 <div style={{ display: 'flex' }}>
+                  {t('Tutorials')}&nbsp;
                   <ExternalLink width={14} />
-                  &nbsp;{t('Tutorials')}
                 </div>{' '}
               </NavDropdown.Item>
               <NavDropdown.Item href="https://bullsinvesting.club/" target="_blank">
                 <div style={{ display: 'flex' }}>
+                  {t('BUSDT Stablecoin')}&nbsp;
                   <ExternalLink width={14} />
-                  &nbsp;{t('BUSDT Stablecoin')}
                 </div>
               </NavDropdown.Item>
             </NavDropdown>
