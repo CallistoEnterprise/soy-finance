@@ -192,7 +192,7 @@ function shortenAddress(address, chars = 4) {
 
 const oneDaySeconds = 24 * 3600
 
-const Airdrop = () => {
+const AirdropContent = () => {
   const { t } = useTranslation()
   const { account, library } = useWeb3React()
   // const account = "0x2a7Ae21193EE0184DdDC0d89771Ee50B98019a41"
@@ -478,4 +478,4 @@ const TbDiv = styled.div`
 const TbDiv2 = styled.div`
   width: 50%;
 `
-export default Airdrop
+export default AirdropContent
