@@ -1,8 +1,8 @@
 import { ReactText } from 'react'
 
 export interface Language {
-  locale: string;
-  language: string;
+  locale: string
+  language: string
   code: string
 }
 

@@ -4,7 +4,7 @@ import scrolling from 'assets/images/scrolling.png'
 import metricbg from 'assets/images/metricbg.png'
 import mark3 from 'assets/images/mark3.png'
 import char from 'assets/images/char.png'
-import back5 from 'assets/images/back5.png'
+import back5 from 'assets/images/back5.webp'
 import rock from 'assets/images/Rock.png'
 import anileft from 'assets/images/anileft.png'
 import aniright from 'assets/images/aniright.png'
@@ -20,7 +20,7 @@ import mark10 from 'assets/images/4section/8.png'
 import mark11 from 'assets/images/4section/9.png'
 import mark12 from 'assets/images/4section/10.png'
 import mark13 from 'assets/images/4section/11.png'
-import BG from 'assets/images/4section/BG.png'
+import BG from 'assets/images/4section/BG.webp'
 import bnb from 'assets/images/4section/BNB.png'
 import clo from 'assets/images/4section/CLO.png'
 import etc from 'assets/images/4section/ETC.png'
@@ -37,9 +37,9 @@ import logowhite from 'assets/images/logowhite.png'
 import mobmark3 from 'assets/images/mobmark3.png'
 import mobmetricbg from 'assets/images/metricbgmob.png'
 import mobart from 'assets/images/4section/mobart.png'
-import mobback5 from 'assets/images/mobback5.png'
+import mobback5 from 'assets/images/mobback5.webp'
 import footermob from 'assets/images/FooterMob.png'
-import roadmap from 'assets/images/Roadmap.jpg'
+import roadmap from 'assets/images/Roadmap.webp'
 import soywhite from 'assets/images/whitesoy.png'
 import airback from 'assets/images/BG.png'
 import ufo from 'assets/images/UFO.png'
@@ -55,57 +55,57 @@ import coingecko from 'assets/images/coingecko.png'
 import coinpap from 'assets/images/Coinpaprika.png'
 
 export const Assets = {
-    logo,
-    token,
-    scrolling,
-    metricbg,
-    mark3,
-    char,
-    back5,
-    rock,
-    anileft,
-    aniright,
-    footerback,
-    logo2,
-    innercircle,
-    outcircle,
-    mark6,
-    mark7,
-    mark8,
-    mark9,
-    mark10,
-    mark11,
-    mark12,
-    mark13,
-    BG,
-    bnb,
-    clo,
-    etc,
-    eth,
-    line,
-    point,
-    smile1,
-    smile2,
-    starbnb,
-    starclo,
-    starleft,
-    starright,
-    logowhite,
-    mobmark3,
-    mobart,
-    mobback5,
-    footermob,
-    mobmetricbg,
-    roadmap,
-    soywhite,
-    airback,
-    ufo,
-    medium,
-    CMCIcon,
-    coingecko,
-    coinpap,
-    news1,
-    news2,
-    news3,
-    news4,
+  logo,
+  token,
+  scrolling,
+  metricbg,
+  mark3,
+  char,
+  back5,
+  rock,
+  anileft,
+  aniright,
+  footerback,
+  logo2,
+  innercircle,
+  outcircle,
+  mark6,
+  mark7,
+  mark8,
+  mark9,
+  mark10,
+  mark11,
+  mark12,
+  mark13,
+  BG,
+  bnb,
+  clo,
+  etc,
+  eth,
+  line,
+  point,
+  smile1,
+  smile2,
+  starbnb,
+  starclo,
+  starleft,
+  starright,
+  logowhite,
+  mobmark3,
+  mobart,
+  mobback5,
+  footermob,
+  mobmetricbg,
+  roadmap,
+  soywhite,
+  airback,
+  ufo,
+  medium,
+  CMCIcon,
+  coingecko,
+  coinpap,
+  news1,
+  news2,
+  news3,
+  news4,
 }

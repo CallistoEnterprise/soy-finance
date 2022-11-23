@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Web3 from 'web3'
 import Utils from 'web3-utils'
 import { request, gql } from 'graphql-request'
-import Farmlist from "./farmlist.json"
+import Farmlist from 'constants/farmlist.json'
 
 /* eslint no-await-in-loop: 0 */
 
@@ -65,7 +65,6 @@ export const useGetBurnedSoy = () => {
   return burnedSoy
 }
 
-
 export const useGetStakingAPR = () => {
   const [apr, setAPR] = useState(0)
 
@@ -111,14 +110,35 @@ export const useGetFarmsApr = () => {
   return data
 }
 
-
-const SOY_STAKING_ABI = [{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"getAllocationX1000","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"getRewardPerSecond","inputs":[]},{"type":"function","stateMutability":"view","outputs":[{"type":"uint256","name":"","internalType":"uint256"}],"name":"totalStaked","inputs":[]},]
+const SOY_STAKING_ABI = [
+  {
+    type: 'function',
+    stateMutability: 'view',
+    outputs: [{ type: 'uint256', name: '', internalType: 'uint256' }],
+    name: 'getAllocationX1000',
+    inputs: [],
+  },
+  {
+    type: 'function',
+    stateMutability: 'view',
+    outputs: [{ type: 'uint256', name: '', internalType: 'uint256' }],
+    name: 'getRewardPerSecond',
+    inputs: [],
+  },
+  {
+    type: 'function',
+    stateMutability: 'view',
+    outputs: [{ type: 'uint256', name: '', internalType: 'uint256' }],
+    name: 'totalStaked',
+    inputs: [],
+  },
+]
 const SOY_STAKING_ADDRESSES = [
-  "0xfF9289C2656CA1d194DeA1895aAf3278B744Fa70", // 7
-  "0x86F7e2ef599690b64f0063b3F978ea6Ae2814f63", // 30
-  "0x7d6C70b6561C31935e6B0dd77731FC63D5aC37F2", // 91
-  "0x19DcB402162b6937a8ACEac87Ed6c05219c9bEf7", // 182
-  "0x31bFf88C6124E1622f81b3Ba7ED219e5d78abd98", // 365
+  '0xfF9289C2656CA1d194DeA1895aAf3278B744Fa70', // 7
+  '0x86F7e2ef599690b64f0063b3F978ea6Ae2814f63', // 30
+  '0x7d6C70b6561C31935e6B0dd77731FC63D5aC37F2', // 91
+  '0x19DcB402162b6937a8ACEac87Ed6c05219c9bEf7', // 182
+  '0x31bFf88C6124E1622f81b3Ba7ED219e5d78abd98', // 365
 ]
 
 export const useStakingAPR = () => {
@@ -126,12 +146,13 @@ export const useStakingAPR = () => {
 
   useEffect(() => {
     const fetchApr = async () => {
-      const web3 = new Web3(process.env.REACT_APP_NODE_1);
+      const web3 = new Web3(process.env.REACT_APP_NODE_1)
 
       const aprs: number[] = []
-      
+
       try {
-        for(let i = 0; i < SOY_STAKING_ADDRESSES.length; i++) {  // @ts-ignore
+        for (let i = 0; i < SOY_STAKING_ADDRESSES.length; i++) {
+          // @ts-ignore
           const stakingContract = new web3.eth.Contract(SOY_STAKING_ABI, SOY_STAKING_ADDRESSES[i])
 
           const totalStaked = await stakingContract.methods.totalStaked().call()
@@ -139,15 +160,14 @@ export const useStakingAPR = () => {
           const multiplier1000 = await stakingContract.methods.getAllocationX1000().call()
           const year = 365 * 24 * 60 * 60 // await stakingContract.methods.lockTime().call()
 
-          const stakingAPR = Number(Utils.fromWei(rewardPerSecond, "ether"))
-                              * Number(multiplier1000)
-                              * Number(year)
-                              * 100 / 1000
-                              / Number(Utils.fromWei(totalStaked, "ether"))
+          const stakingAPR =
+            (Number(Utils.fromWei(rewardPerSecond, 'ether')) * Number(multiplier1000) * Number(year) * 100) /
+            1000 /
+            Number(Utils.fromWei(totalStaked, 'ether'))
 
           aprs.push(stakingAPR)
         }
-      } catch(err) {
+      } catch (err) {
         // console.log("useStakingAPR error:", err)
       }
 
@@ -159,30 +179,28 @@ export const useStakingAPR = () => {
   return maxApr
 }
 
-
-
 interface FarmWithAPR {
-  name: string,
-  lp: string,
-  apr: number,
-  liquidityUSD: number,
-  token0: string,
+  name: string
+  lp: string
+  apr: number
+  liquidityUSD: number
+  token0: string
   token1: string
 }
 
-const defaultFarm:FarmWithAPR = {
-  name: "undefined",
-  lp: "",
+const defaultFarm: FarmWithAPR = {
+  name: 'undefined',
+  lp: '',
   apr: 0,
   liquidityUSD: 0,
-  token0: "",
-  token1: "",
+  token0: '',
+  token1: '',
 }
 
-const INFO_CLIENT = "https://03.callisto.network/subgraphs/name/soyswap"
+const INFO_CLIENT = 'https://03.callisto.network/subgraphs/name/soyswap'
 
 export const useFarmingAPR = () => {
-  const [bestFarms, setBestFarms] = useState([{...defaultFarm}, {...defaultFarm}, {...defaultFarm}])
+  const [bestFarms, setBestFarms] = useState([{ ...defaultFarm }, { ...defaultFarm }, { ...defaultFarm }])
 
   useEffect(() => {
     const fetchFarms = async () => {
@@ -192,26 +210,26 @@ export const useFarmingAPR = () => {
 
         const query = gql`
           query {
-            pairs(first: 1000){
-              id,
-              name,
+            pairs(first: 1000) {
+              id
+              name
               token0 {
                 id
-              },
+              }
               token1 {
                 id
-              },
+              }
               reserveUSD
             }
-          }        
-          `
+          }
+        `
         const data = await request(INFO_CLIENT, query)
 
-        const farmsWithAPRs:FarmWithAPR[] = []
-          // eslint-disable-next-line
-        for(const farm of Farmlist.farmsInfo) {
+        const farmsWithAPRs: FarmWithAPR[] = []
+        // eslint-disable-next-line
+        for (const farm of Farmlist.farmsInfo) {
           const pair = data.pairs.find((lp) => lp.id.toLowerCase() === farm.lptoken.toLowerCase())
-          const apr = farm.yearlysoyreward * soyPrice / pair.reserveUSD
+          const apr = (farm.yearlysoyreward * soyPrice) / pair.reserveUSD
 
           farmsWithAPRs.push({
             name: farm.pair, // pair.name, // sometimes unknown, subgraph issue
@@ -219,17 +237,16 @@ export const useFarmingAPR = () => {
             apr: apr * 100,
             liquidityUSD: pair.reserveUSD,
             token0: pair.token0.id,
-            token1: pair.token1.id
+            token1: pair.token1.id,
           })
         }
 
-        farmsWithAPRs.sort((a, b) => a.apr < b.apr ? 1 : -1)
+        farmsWithAPRs.sort((a, b) => (a.apr < b.apr ? 1 : -1))
 
         // console.log(farmsWithAPRs)
 
         setBestFarms([farmsWithAPRs[0], farmsWithAPRs[1], farmsWithAPRs[2]])
-
-      } catch(err) {
+      } catch (err) {
         // console.log(err)
       }
     }

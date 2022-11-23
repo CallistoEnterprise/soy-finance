@@ -5,10 +5,10 @@ import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
 } from '@web3-react/injected-connector'
-import {
+/* import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
-} from '@web3-react/walletconnect-connector'
+} from '@web3-react/walletconnect-connector' */
 import { ConnectorNames, connectorsByName, connectorLocalStorageKey } from '../constants'
 import { setupNetwork } from './wallet'
 
@@ -24,22 +24,22 @@ const useAuth = () => {
           if (error instanceof UnsupportedChainIdError) {
             const hasSetup = await setupNetwork()
             if (hasSetup) {
-              activate(connector)              
+              activate(connector)
             }
           } else {
             window.localStorage.removeItem(connectorLocalStorageKey)
-            
+
             if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
               console.error('Provider Error', 'No provider was found')
               // toastError('Provider Error', 'No provider was found')
             } else if (
-              error instanceof UserRejectedRequestErrorInjected ||
-              error instanceof UserRejectedRequestErrorWalletConnect
+              error instanceof UserRejectedRequestErrorInjected /* ||
+              error instanceof UserRejectedRequestErrorWalletConnect */
             ) {
-              if (connector instanceof WalletConnectConnector) {
+              /* if (connector instanceof WalletConnectConnector) {
                 const walletConnector = connector as WalletConnectConnector
                 walletConnector.walletConnectProvider = null
-              }
+              } */
               console.error('Authorization Error', 'Please authorize to access your account')
               // toastError('Authorization Error', 'Please authorize to access your account')
             } else {
