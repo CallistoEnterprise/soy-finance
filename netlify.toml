@@ -22,8 +22,8 @@
 [context.optimized.processing]
   skip_processing = false
 [context.optimized.processing.css]
-  bundle = true
+  bundle = false
   minify = true
 [context.optimized.processing.js]
-  bundle = true
+  bundle = false
   minify = true
