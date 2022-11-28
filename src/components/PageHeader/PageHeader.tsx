@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { ExternalLink } from 'components/Svg'
 import { Theme } from 'constants/theme'
 import { Assets } from 'constants/images'
@@ -7,10 +8,6 @@ import './PageHeader.scss'
 import { useTranslation } from 'contexts/Localization'
 import { languages } from 'constants/localization/languages'
 import { PageHeaderProps } from './types'
-
-const Navbar = styled.div``
-const Nav = styled.div``
-const NavDropdown = styled.div``
 
 const langTitle = {
   'en-US': 'EN',
@@ -21,7 +18,7 @@ const langTitle = {
   'ko-KR': 'KO',
 }
 
-const PageHeader: React.FC<PageHeaderProps> = () => {
+const PageHeader: React.FC<PageHeaderProps> = ({ centerize = false }) => {
   const { currentLanguage, setLanguage, t } = useTranslation()
 
   const handleChangeLang = (lg) => {
@@ -29,39 +26,45 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
   }
 
   return (
-    <Navbar>
-      <Navbar>
+    <Navbar
+      collapseOnSelect
+      expand="md"
+      className={`navbar ${centerize ? 'centerize' : ''}`}
+      variant="dark"
+      sticky="top"
+    >
+      <Navbar.Brand href="/">
         <Logo>
           <LogoImg src={Assets.logo} className="App-logo" alt="Soy Finance Logo" width={135} />
         </Logo>
-      </Navbar>
-      <Navbar aria-controls="responsive-navbar-nav" />
-      <Navbar id="responsive-navbar-nav">
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
           <Li>
             <NavDropdown title={t('Soy Finance')} id="collasible-nav-dropdown">
-              <a href="/roadmap">{t('Roadmap')}</a>
-              <a href="/tokenomic">{t('SOY Tokenomics')}</a>
-              <a href="/safelist">{t('Safelisting')}</a>
-              <a href="/airdrop">{t('SOY Airdrop')}</a>
-              <a href="https://clo.click/how_to" target="_blank" rel="noreferrer noopener">
+              <NavDropdown.Item href="/roadmap">{t('Roadmap')}</NavDropdown.Item>
+              <NavDropdown.Item href="/tokenomic">{t('SOY Tokenomics')}</NavDropdown.Item>
+              <NavDropdown.Item href="/safelist">{t('Safelisting')}</NavDropdown.Item>
+              <NavDropdown.Item href="/airdrop">{t('SOY Airdrop')}</NavDropdown.Item>
+              <NavDropdown.Item href="https://clo.click/how_to" target="_blank">
                 <div style={{ display: 'flex' }}>
                   {t('Tutorials')}&nbsp;
                   <ExternalLink width={14} />
                 </div>{' '}
-              </a>
-              <a href="https://bullsinvesting.club/" target="_blank" rel="noreferrer noopener">
+              </NavDropdown.Item>
+              <NavDropdown.Item href="https://bullsinvesting.club/" target="_blank">
                 <div style={{ display: 'flex' }}>
                   {t('BUSDT Stablecoin')}&nbsp;
                   <ExternalLink width={14} />
                 </div>
-              </a>
+              </NavDropdown.Item>
             </NavDropdown>
           </Li>
           <Li>
-            <a href="https://bridge.soy.finance/" target="_blank" rel="noreferrer noopener">
+            <Nav.Link href="https://bridge.soy.finance/" target="_blank">
               {t('SOY Bridge')}
-            </a>
+            </Nav.Link>
           </Li>
           {/* <LiButton href="https://app.soy.finance/#/swap" target="_blank">
             {t('Launch Soy Finance')}
@@ -69,16 +72,16 @@ const PageHeader: React.FC<PageHeaderProps> = () => {
           <LiButton href="/airdrop">{t('SOY Airdrop')}</LiButton>
           <Li>
             <NavDropdown title={langTitle[`${currentLanguage.locale}`]} id="collasible-nav-dropdown">
-              <NavDropdown onClick={() => handleChangeLang('en-US')}>EN</NavDropdown>
-              <NavDropdown onClick={() => handleChangeLang('zh-CN')}>CH</NavDropdown>
-              <NavDropdown onClick={() => handleChangeLang('zh-TW')}>TW</NavDropdown>
-              <NavDropdown onClick={() => handleChangeLang('ru-RU')}>RU</NavDropdown>
-              <NavDropdown onClick={() => handleChangeLang('uk-UA')}>UK</NavDropdown>
-              <NavDropdown onClick={() => handleChangeLang('ko-KR')}>KO</NavDropdown>
+              <NavDropdown.Item onClick={() => handleChangeLang('en-US')}>EN</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleChangeLang('zh-CN')}>CH</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleChangeLang('zh-TW')}>TW</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleChangeLang('ru-RU')}>RU</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleChangeLang('uk-UA')}>UK</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => handleChangeLang('ko-KR')}>KO</NavDropdown.Item>
             </NavDropdown>
           </Li>
         </Nav>
-      </Navbar>
+      </Navbar.Collapse>
     </Navbar>
   )
 }
