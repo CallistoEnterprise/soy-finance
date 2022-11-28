@@ -1,14 +1,12 @@
 import React from 'react'
-import { Theme } from 'constants/theme'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import SafetyOnYields from 'assets/images/safetyonyields.svg'
 
 const TitleSection = () => {
-  const { t } = useTranslation()
   return (
     <TitleArea>
       <Title>
-        <Titlepre>{t('Safety On Yields')}</Titlepre>
+        <TitleImage src={SafetyOnYields} alt="Safety On Yields" height={157} />
       </Title>
     </TitleArea>
   )
@@ -30,6 +28,22 @@ const Title = styled.div`
     display: block;
   }
 `
+
+const TitleImage = styled.img`
+  height: 135px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @media (max-width: 1044px) {
+    height: 100px;
+  }
+  @media (max-width: 768px) {
+    height: 80px;
+    margin-top: 0px;
+  }
+`
+/*
 const Titlepre = styled.p`
   font-size: 79px;
   line-height: 157px;
@@ -46,6 +60,6 @@ const Titlepre = styled.p`
     line-height: 97.17px;
     margin-bottom: 20px;
   }
-`
+` */
 
 export default TitleSection
