@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { ThemeProvider as SCThemeProvider } from 'styled-components'
-import { light, dark } from '@callisto-enterprise/soy-uikit2'
+// import { light, dark } from '@callisto-enterprise/soy-uikit2'
+import light from 'style/theme-uikit/light'
 
 const CACHE_KEY = 'IS_DARK'
 
@@ -26,7 +27,7 @@ const ThemeContextProvider: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-      <SCThemeProvider theme={isDark ? dark : light}>{children}</SCThemeProvider>
+      <SCThemeProvider theme={light}>{children}</SCThemeProvider>
     </ThemeContext.Provider>
   )
 }
