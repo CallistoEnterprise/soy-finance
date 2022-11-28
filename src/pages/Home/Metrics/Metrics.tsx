@@ -102,6 +102,8 @@ const Metrics = () => {
           </SubFlex>
         </Flex>
       </Content>
+      <BackImg src={Assets.metricbg} alt="Background" />
+      <BackImgMob src={Assets.mobmetricbg} alt="Background" />
     </Container>
   )
 }
@@ -125,6 +127,27 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
+`
+const BackImg = styled.img`
+  position: absolute;
+  margin-top: -80px;
+  height: 650px;
+  width: 100%;
+  object-fit: cover;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+const BackImgMob = styled.img`
+  position: absolute;
+  margin-top: -80px;
+  height: 650px;
+  width: 100%;
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    object-fit: cover;
+  }
 `
 const Content = styled.div`
   position: absolute;
