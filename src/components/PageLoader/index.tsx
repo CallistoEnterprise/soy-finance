@@ -1,5 +1,4 @@
 import React from 'react'
-import { Spinner } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -38,11 +37,7 @@ const Wrapper = styled(Page)`
 `
 
 const PageLoader: React.FC = () => {
-  return (
-    <Wrapper>
-      <Spinner animation="border" />
-    </Wrapper>
-  )
+  return <Wrapper>hey</Wrapper>
 }
 
 export default PageLoader
