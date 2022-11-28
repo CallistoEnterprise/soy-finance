@@ -24,8 +24,8 @@ export const Theme = {
     info: '#17a2b8',
   },
   fonts: {
-    textBold: 'Lato',
-    medium: 'Lato',
-    text: 'Lato',
+    textBold: ['Lato, Arial'],
+    medium: ['Lato, Arial'],
+    text: ['Lato, Arial'],
   },
 }
