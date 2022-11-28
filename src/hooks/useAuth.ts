@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
-import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
@@ -29,7 +28,7 @@ const useAuth = () => {
           } else {
             window.localStorage.removeItem(connectorLocalStorageKey)
 
-            if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+            if (error instanceof NoEthereumProviderError) {
               console.error('Provider Error', 'No provider was found')
               // toastError('Provider Error', 'No provider was found')
             } else if (
