@@ -198,6 +198,7 @@ const defaultFarm: FarmWithAPR = {
 }
 
 const INFO_CLIENT = 'https://03.callisto.network/subgraphs/name/soyswap'
+const SOY_TOKEN_ADDRESS = '0x9FaE2529863bD691B4A7171bDfCf33C7ebB10a65'
 
 export const useFarmingAPR = () => {
   const [bestFarms, setBestFarms] = useState([{ ...defaultFarm }, { ...defaultFarm }, { ...defaultFarm }])
@@ -205,8 +206,8 @@ export const useFarmingAPR = () => {
   useEffect(() => {
     const fetchFarms = async () => {
       try {
-        const coingeckoRequest = await axios.get('https://api.coingecko.com/api/v3/coins/soy-finance')
-        const soyPrice = coingeckoRequest.data.market_data.current_price.usd
+        // const coingeckoRequest = await axios.get('https://api.coingecko.com/api/v3/coins/soy-finance')
+        // const soyPrice = coingeckoRequest.data.market_data.current_price.usd
 
         const query = gql`
           query {
@@ -221,9 +222,17 @@ export const useFarmingAPR = () => {
               }
               reserveUSD
             }
+
+            token(id: "${SOY_TOKEN_ADDRESS.toLowerCase()}") {
+              tokenDayData(orderBy: date, orderDirection: desc, first: 1) {
+                priceUSD
+              }
+            }
           }
         `
         const data = await request(INFO_CLIENT, query)
+
+        const soyPrice = data.token.tokenDayData[0].priceUSD
 
         const farmsWithAPRs: FarmWithAPR[] = []
         // eslint-disable-next-line
