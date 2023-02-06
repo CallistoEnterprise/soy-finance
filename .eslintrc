@@ -8,8 +8,7 @@
   },
   "env": {
     "es6": true,
-    "browser": true,
-    "jest": true
+    "browser": true
   },
   "extends": "@pancakeswap/eslint-config-pancake",
   "rules": {
