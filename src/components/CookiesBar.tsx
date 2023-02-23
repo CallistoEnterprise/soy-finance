@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Theme } from 'constants/theme'
 import styled from 'styled-components'
 
@@ -6,16 +6,23 @@ const COOKIES_KEY = 'cookies-consented'
 
 const CookiesBar = () => {
   const [cookiesApproved, setCookiesApproved] = useState(() => localStorage.getItem(COOKIES_KEY) === '1')
+  const [fadeIn, setFadeIn] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setFadeIn(true), 1000)
+    return () => clearTimeout(timeout)
+  }, [])
 
   const onAccept = () => {
     localStorage.setItem(COOKIES_KEY, '1')
-    setCookiesApproved(true)
+    setFadeIn(false)
+    setTimeout(() => setCookiesApproved(true), 1000)
   }
 
   if (cookiesApproved) return null
 
   return (
-    <Container>
+    <Container show={fadeIn}>
       <Subcontainer>
         <Text>
           We use cookies to enhance your experience on our website. By continuing to browse our site, you consent to our
@@ -33,11 +40,14 @@ const CookiesBar = () => {
   )
 }
 
-const Container = styled.div`
+const Container = styled.div<{ show: boolean }>`
   position: fixed;
-  bottom: 10px;
   z-index: 100;
   width: 100%;
+
+  transition: all 0.7s;
+  bottom: ${({ show }) => (!show ? 0 : 15)}px;
+  opacity: ${({ show }) => (!show ? 0 : 1)};
 `
 
 const Subcontainer = styled.div`
