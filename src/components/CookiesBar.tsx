@@ -20,7 +20,7 @@ const CookiesBar = () => {
         <Text>
           We use cookies to enhance your experience on our website. By continuing to browse our site, you consent to our
           use of cookies. To find out more about how we use cookies, please see our&nbsp;
-          <Link href="/cookies-policy.pdf" target="_blank" rel="noopener noreferrer">
+          <Link href="/docs/cookies-policy.pdf" target="_blank" rel="noopener noreferrer">
             Cookies Policy
           </Link>
           .
@@ -44,7 +44,7 @@ const Subcontainer = styled.div`
   width: 100%;
   max-width: 800px;
   background-color: ${Theme.colors.bgscondary};
-  padding: 12px;
+  padding: 16px;
   margin: 0px auto;
   border-radius: 14px;
 `
@@ -52,22 +52,29 @@ const Subcontainer = styled.div`
 const Text = styled.p`
   font-family: ${Theme.fonts.text};
   font-size: 16px;
+  color: white;
+  line-height: 1.2;
 `
 
 const Link = styled.a`
   font-weight: 700;
+  text-decoration: none !important;
+  &:hover {
+    color: black;
+  }
 `
 
 const Button = styled.button`
   margin-top: 8px;
 
-  color: white;
-  background-color: ${Theme.colors.bgscondary};
+  color: ${Theme.colors.bgscondary};
+  background-color: white;
   font-size: 18px;
   font-weight: 700;
   font-family: ${Theme.fonts.text};
-  height: 40px;
-  padding: 10px 50px;
+  height: 32px;
+  padding: 5px 40px;
+  border: 0;
   border-radius: 52px;
 
   &:hover {
