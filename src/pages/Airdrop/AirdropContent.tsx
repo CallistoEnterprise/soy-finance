@@ -16,6 +16,7 @@ import { BIG_100, getBalanceAmount, GetAirdropInfo, getChecksumedAddress } from 
 import { BigNumber } from 'bignumber.js'
 import { ConnectorNames } from 'constants/index'
 import 'aos/dist/aos.css'
+import CookiesBar from 'components/CookiesBar'
 
 const Wrapper = styled.div`
   display: flex;
@@ -281,6 +282,7 @@ const AirdropContent = () => {
 
   return (
     <Page>
+      <CookiesBar />
       <Wrapper>
         {metrics && <Title color={Theme.colors.black}>{t('Metrics Data')}</Title>}
         {metrics && (

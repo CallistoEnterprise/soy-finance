@@ -61,7 +61,7 @@ const Container = styled.div`
 
 const ScrollDiv = styled.div`
   position: absolute;
-  bottom: 80px;
+  bottom: 140px;
   left: calc(50% - 10px);
   width: 30px;
   height: 50px;
