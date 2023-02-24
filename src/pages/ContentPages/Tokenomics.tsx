@@ -3,6 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import { Theme } from 'constants/theme'
 import Spacer from 'components/Spacer'
 import Page from 'components/Layout/Page'
+import CookiesBar from 'components/CookiesBar'
 import {
   Container,
   Title,
@@ -23,6 +24,7 @@ const Tokenomics = () => {
 
   return (
     <Page>
+      <CookiesBar />
       <Container>
         <Title color={Theme.colors.primary}>{t('SOY Tokenomics')}</Title>
         <Spacer height="80px" />

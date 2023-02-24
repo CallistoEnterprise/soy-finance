@@ -3,6 +3,7 @@ import { useTranslation } from 'contexts/Localization'
 import Spacer from 'components/Spacer'
 import Page from 'components/Layout/Page'
 import { Theme } from 'constants/theme'
+import CookiesBar from 'components/CookiesBar'
 import {
   Container,
   Title,
@@ -23,6 +24,7 @@ const Safelist = () => {
 
   return (
     <Page>
+      <CookiesBar />
       <Container>
         <Title color={Theme.colors.primary}>{t('SOY Finance Safelisting')}</Title>
         <Spacer height="80px" />

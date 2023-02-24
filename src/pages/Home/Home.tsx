@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import AOS from 'aos'
 import PageFooter from 'components/PageFooter'
+import CookiesBar from 'components/CookiesBar'
 import Intro from './Intro'
 import Metrics from './Metrics'
 import Community from './Community'
@@ -39,6 +40,7 @@ const Home: React.FC = () => {
 
   return (
     <Container>
+      <CookiesBar />
       <Intro />
       <Metrics />
       <Oneinch />

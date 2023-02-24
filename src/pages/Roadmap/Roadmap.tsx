@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { Assets } from 'constants/images'
 import 'aos/dist/aos.css'
+import CookiesBar from 'components/CookiesBar'
 
 const Img = styled.img`
   width: 100%;
@@ -26,6 +27,7 @@ const Roadmap: React.FC = () => {
 
   return (
     <Page hideFooter>
+      <CookiesBar />
       <Img src={Assets.roadmap} alt="Roadmap Graphic" />
       <div ref={pageEndRef} />
     </Page>
