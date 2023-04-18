@@ -7,7 +7,7 @@ import Farmlist from 'constants/farmlist.json'
 
 /* eslint no-await-in-loop: 0 */
 
-const METRICS = 'https://soy-finance.deta.dev/soy_metrics'
+const METRICS = 'https://api.callisto.network/soy_metrics'
 
 export const useMetrics = () => {
   const [metricsData, setMetricsData] = useState({
