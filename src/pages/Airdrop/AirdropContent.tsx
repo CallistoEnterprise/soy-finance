@@ -229,7 +229,7 @@ const AirdropContent = () => {
   useEffect(() => {
     const getAccountStatus = () => {
       const acc = getChecksumedAddress(account)
-      axios.get(`https://soy-airdrop.deta.dev/is_eligible/${acc}`).then((res) => {
+      axios.get(`https://api.callisto.network/is_eligible/${acc}`).then((res) => {
         if (res.data) {
           if (res.data.is_eligable && res.data.is_participant) {
             setUserStatus('You already claimed, airdrop amount will be automatically sent to your wallet in 180 days.')
@@ -252,7 +252,7 @@ const AirdropContent = () => {
 
   useEffect(() => {
     const getMetrics = () => {
-      axios.get('https://soy-airdrop.deta.dev/get_metrics').then((res) => {
+      axios.get('https://api.callisto.network/get_metrics').then((res) => {
         if (res.data) {
           setMetrics(res.data)
         }
